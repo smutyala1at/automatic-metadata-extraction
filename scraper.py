@@ -153,11 +153,13 @@ if __name__ == "__main__":
         # List of queries
         queries = ['energy', 'climate', 'green+energy', 'bioinformatics', 'distributed+systems', 'engineering', 'health', 'marine', 'space', 'artificial+intelligence', 'research']
 
-        # for each query, fetch readmes
-        readmes = fetch_all_readmes(query='research', max_repos=100, per_page=100)
+        if not os.path.exists("./files/"):
+            os.makedirs("./files/")
         
-        # add readmes to output file
-        append_to_json_file('./files/readmes.json', readmes)
+        # for each query, fetch readmes and add readmes to output file
+        for query in queries:
+            readmes = fetch_all_readmes(query, max_repos=100, per_page=100)
+            append_to_json_file('./files/readmes.json', readmes)
         
     except Exception as e:
         print(f"An error occurred: {e}")
