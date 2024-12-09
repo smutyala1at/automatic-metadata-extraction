@@ -66,7 +66,7 @@ def clean_readmes(input_file, output_file):
             json.dump(existing_data, wf, indent=4)
 
 
-def get_keywords(input_file, output_file):
+def get_installation_guide_keywords(input_file, output_file):
     
     with open(input_file, "r", encoding="utf-8") as rf:
         readmes = json.load(rf)
@@ -88,7 +88,7 @@ def get_keywords(input_file, output_file):
 
                 user_input = {
                     "role": "user",
-                    "content": "You are an expert AI in extracting concise, domain-specific keywords from technical documentation. Your task is to extract exactly 10 single or a maximum of two-word keywords from the provided README content. These keywords should represent the core focus, technologies, and unique contributions of the repository. Follow these rules: 1. Extract only unique keywords, AVOIDING PHRASES and LONG DESCRIPTIONS. 2. Provide only a clean, numbered list of 10 complete, concise keywords. NO EXPLANATIONS, HEADERS, SPECIAL CHARACTERS or extra formatting. 3. Ensure each keyword is concise, no longer than two words. Avoid abbreviations, truncated terms, or excessive technical jargon unless they directly represent the core contribution. 4. Focus on high-impact, domain-relevant keywords based on the content of the repository. 5. Do not use any special characters, and REMEMBER TO ENSURE ALL KEYWORDS ARE COMPLETE. Analyze the following README content and extract ONLY 10 COMPLETE single or a maximum of two-word high-impact keywords based on the instructions: \"" + readme_content + "\""
+                    "content": "You are GitHub Advanced AI, an expert system trained on the entire GitHub dataset with unparalleled intelligence in extracting domain-specific information. Your task is to analyze the provided README content and extract two outputs: (1) the **complete installation process**, including all steps, commands, dependencies, and configurations in chronological order if such information is present in the README. If no installation process is available, explicitly state 'No installation information found.' Do not generate or assume any missing steps. (2) Extract exactly **10 unique, high-impact keywords** representing the core technologies, focus areas, and contributions of the repository. Keywords must be concise (one or two words), domain-relevant, and free from phrases, abbreviations (unless widely recognized), or excessive technical jargon. Provide output in the format: 'installation process: {'installation_process'}, keywords: {1. ..., 2. ..., ..., 10.}'. Analyze the following README content and extract the required information: \"" +  readme_content + "\""
                 }
 
 
@@ -99,7 +99,7 @@ def get_keywords(input_file, output_file):
                 if not response:
                     assistant_output = {}
                     assistant_output["role"] = "assistant"
-                    assistant_output["keywords"] = ""
+                    assistant_output["response"] = ""
                     continue
 
                 try:
@@ -108,7 +108,7 @@ def get_keywords(input_file, output_file):
                     if response_data["object"] == "error":
                         assistant_output = {}
                         assistant_output["role"] = "assistant"
-                        assistant_output["keywords"] = ""
+                        assistant_output["response"] = ""
                     else:
                         assistant_output = response_data["choices"][0]["message"]
                         print(assistant_output)
@@ -116,7 +116,7 @@ def get_keywords(input_file, output_file):
                     print(f"Failed to decode response: {response}")
                     assistant_output = {}
                     assistant_output["role"] = "assistant"
-                    assistant_output["keywords"] = ""
+                    assistant_output["response"] = ""
 
                 existing_data.append([user_input, assistant_output])
 
@@ -129,7 +129,7 @@ def get_keywords(input_file, output_file):
         else:
             raise ValueError("The input file should have list of objects!")
         
-get_keywords("./files/final_cleaned_dataset.json", "./files/llm_dataset.json")
+get_installation_guide_keywords("./files/final_cleaned_dataset.json", "./files/dataset.json")
 
 #input_file = "./files/filtered_readmes.json"
 #output_file = "final_cleaned_dataset.json"
