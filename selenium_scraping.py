@@ -43,15 +43,22 @@ def get_repo_links(file_name_or_path):
                 repo_link = driver.find_element(By.XPATH, '//a[@title="Gitlab repository"]')
             except NoSuchElementException:
                 repo_link = None
+                file_content["final_links"].append({
+                    "software_organization": link,
+                    "repo_link": ""
+                })
                 print("Neither github nor gitlab link is found")
 
         if repo_link:
-            file_content["final_links"].append(repo_link.get_attribute('href'))
+            file_content["final_links"].append({
+                "software_organization": link,
+                "repo_link": repo_link.get_attribute('href')
+            })
             print("github_link: ", repo_link.get_attribute('href'))
 
     with open(file_name_or_path, "w", encoding="utf-8") as wf:
         json.dump(file_content, wf, ensure_ascii=False, indent=4)
 
-#get_repo_links("./files/software_pages.json")
+get_repo_links("./files/software_pages.json")
 #get_software_page_links(page, ROWS, page_links)
 

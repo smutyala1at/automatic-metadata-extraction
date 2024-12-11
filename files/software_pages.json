@@ -357,345 +357,1425 @@
         "https://helmholtz.software/software/xraypac"
     ],
     "final_links": [
-        "https://github.com/jokergoo/sfcurve",
-        "https://gitlab.jsc.fz-juelich.de/CoE-RAISE/FZJ/ai4hpc/",
-        "https://github.com/JuDFTteam/aiida-kkr",
-        "https://github.com/JuDFTteam/aiida-spirit",
-        "https://gitlab.com/album-app/album",
-        "https://jugit.fz-juelich.de/iek-10/public/tools/alice2modelica",
-        "https://gitlab.cern.ch/allpix-squared/allpix-squared",
-        "https://github.com/INM-6/alpaca",
-        "https://github.com/alpaka-group/alpaka",
-        "https://gitlab.com/dlr-ve/esy/amiris/amiris",
-        "https://github.com/scverse/anndata",
-        "https://github.com/hifis-net/ansible-collection-toolkit",
-        "https://github.com/merenlab/anvio",
-        "https://github.com/arbor-sim/arbor/",
-        "https://github.com/ArDoCo/Core",
-        "https://git.gfz-potsdam.de/danschef/arosics",
-        "https://github.com/atomec-project/atoMEC",
-        "https://github.com/mahan-hosseini/AutoGaitA",
-        "https://github.com/SMEISEN/AutoPQ",
-        "https://github.com/SMEISEN/AutoPV",
-        "https://github.com/SMEISEN/AutoWP",
-        "https://github.com/CCB-SB/Aviator",
-        "https://github.com/CliDyn",
-        "https://github.com/kit-data-manager/base-repo",
-        "https://github.com/marrlab/BaSiC",
-        "https://github.com/peng-lab/BaSiCPy",
-        "https://github.com/Ramy-Badr-Ahmed/Bending-Stiffness",
-        "https://gitlab.com/dlr-sy/beos",
-        "https://github.com/Ramy-Badr-Ahmed/Bifurcations-Discrete-Maps",
-        "https://github.com/Bonidia/BioAutoML",
-        "https://github.com/DLR-RM/BlenderProc",
-        "https://gitlab.com/dlr-sy/boxbeam",
-        "https://github.com/Deep-MI/brainprint",
-        "https://github.com/cadet/CADET-Core",
-        "https://github.com/JuBiotech/calibr8",
-        "https://codebase.helmholtz.cloud/cat4kit/cat4kit-docker",
-        "https://gitlab.dlr.de/catena/",
-        "https://github.com/FZJ-INM1-BDA/celldetection",
-        "https://github.com/theislab/cellrank",
-        "https://github.com/ChASE-library/ChASE",
-        "https://github.com/desy-ml/cheetah.git",
-        "https://github.com/ComPlat/chemotion_ELN",
-        "https://github.com/MarcoLandtHayen/climate_index_collection",
-        "https://github.com/tonitacker/CIMPredict",
-        "https://github.com/jokergoo/circlize",
-        "https://github.com/citation-file-format/citation-file-format",
-        "https://github.com/matthkarl/citychem",
-        "https://github.com/CliDyn/climsight",
-        "https://gitlab.iap.kit.edu/mreininghaus/cnpypp/",
-        "https://github.com/jokergoo/cola",
-        "https://jugit.fz-juelich.de/iek-10/public/optimization/comando",
-        "https://github.com/Helmholtz-UFZ/CoMOLA",
-        "https://github.com/jokergoo/ComplexHeatmap",
-        "https://github.com/CIPM-tools/CIPM",
-        "https://github.com/KIT-IAI/CopyPasteImputation",
-        "https://github.com/KIT-TVA/CorC",
-        "https://github.com/cosmoscout/cosmoscout-vr",
-        "https://github.com/cp2k/cp2k",
-        "https://github.com/CryoGrid/CryoGridCommunity_source",
-        "https://gitlab.desy.de/thomas.white/crystfel/",
-        "https://github.com/tudasc/CUAS-MPI",
-        "https://gitlab.jsc.fz-juelich.de/perftools/cubegui",
-        "https://gitlab.jsc.fz-juelich.de/perftools/cubelib",
-        "https://gitlab.jsc.fz-juelich.de/perftools/cubew",
-        "https://github.com/ComputationalRadiationPhysics/cuda_memtest",
-        "https://github.com/alpaka-group/cupla",
-        "https://github.com/European-XFEL/DAMNIT",
-        "https://codebase.helmholtz.cloud/dasf/dasf-messaging-python",
-        "https://github.com/FZJ-IEK3-VSA/DataDesc/",
-        "https://github.com/datalad/datalad",
-        "https://github.com/datalad/datalad-container",
-        "https://github.com/datalad/datalad-next",
-        "https://github.com/kalininalab/DataSAIL",
-        "https://github.com/dCache/dcache",
-        "https://gitlab.com/qtb-hhu/marine/DeepLOKI",
-        "https://gitlab.com/deploy2zenodo/deploy2zenodo",
-        "https://github.com/gfzriesgos/deus",
-        "https://git.geomar.de/digital-earth/digital-earth-viewer",
-        "https://github.com/Materials-Data-Science-and-Informatics/dirschema",
-        "https://gitlab.com/dlr-sy/displam",
-        "https://github.com/PedestrianDynamics/DL4PuDe",
-        "https://github.com/ESMValGroup/ESMValTool",
-        "https://git.gfz-potsdam.de/id2/geoperil/easyWave",
-        "https://github.com/rizac/egsim",
-        "https://github.com/theislab/ehrapy",
-        "https://github.com/robeme/lammps",
-        "https://github.com/NeuralEnsemble/elephant",
-        "https://jugit.fz-juelich.de/network-science-group/emipy",
-        "https://git.gfz-potsdam.de/EnMAP/GFZ_Tools_EnMAP_BOX/EnPT",
-        "https://github.com/jokergoo/EnrichedHeatmap",
-        "https://github.com/esm-tools/esm_tools",
-        "https://github.com/ESMValGroup/ESMValCore",
-        "https://github.com/FZJ-IEK3-VSA/FINE",
-        "https://github.com/FZJ-IEK3-VSA/HiSim",
-        "https://github.com/FZJ-IEK3-VSA/ETHOS_PeNALPS",
-        "https://github.com/FZJ-IEK3-VSA/ethos.REFLOW",
-        "https://github.com/FZJ-IEK3-VSA/ETHOS.zoomin",
-        "https://gitlab.kit.edu/julian.quinting/elias-2.0",
-        "https://github.com/Ramy-Badr-Ahmed/beta-faircore4eosc",
-        "https://github.com/FairRootGroup/FairMQ",
-        "https://gitlab.com/fame-framework/fame-io",
-        "https://github.com/fastscape-lem/fastscape",
-        "https://github.com/deep-MI/FastSurfer/",
-        "https://github.com/Deep-MI/FatSegNet",
-        "https://github.com/FESOM/fesom2",
-        "https://github.com/sscholz-UFZ/FishInspector",
-        "https://jugit.fz-juelich.de/iek-10/public/ict-platform/deployment",
-        "https://iffgit.fz-juelich.de/fleur/fleur",
-        "https://github.com/uds-se/FormatFuzzer",
-        "https://github.com/FraCSPy/FraCSPy",
-        "https://github.com/Deep-MI/fsqc",
-        "https://gitlab.dlr.de/pf-plp/gaia-group",
-        "https://jugit.fz-juelich.de/iek-10/public/simulation/gasnetsim",
-        "https://git.gfz-potsdam.de/geomultisens",
-        "https://github.com/ginkgo-project/ginkgo/",
-        "https://git.gfz-potsdam.de/gipp/gipptools",
-        "https://github.com/FZJ-IEK3-VSA/geokit",
-        "https://github.com/Udopia/gbd",
-        "https://github.com/mknaranja/GMGPolar",
-        "https://iffgit.fz-juelich.de/k.koester/goac",
-        "https://github.com/ajacquey/golem",
-        "https://git.gfz-potsdam.de/gravis",
-        "https://github.com/sciapp/gr",
-        "https://github.com/GeoStat-Framework/GSTools",
-        "https://git.gfz-potsdam.de/habitat-sampler/HabitatSampler",
-        "https://github.com/MarieOestreich/hCoCena",
-        "https://github.com/helmholtz-analytics/heat",
-        "https://jugit.fz-juelich.de/iek-10/public/simulation/heatnetsim",
-        "https://codebase.helmholtz.cloud/heliport/heliport",
-        "https://codebase.helmholtz.cloud/research-software-directory/RSD-as-a-service",
-        "https://github.com/Ramy-Badr-Ahmed/Higgs-Dataset-Training",
-        "https://github.com/jokergoo/HilbertCurve",
-        "https://github.com/Deep-MI/hipsta",
-        "https://git.gfz-potsdam.de/icgem",
-        "https://github.com/KabitGit/Ideal-Equilibrium-Oxygen-Membrane-Reactor",
-        "https://git.gfz-potsdam.de/igmas/igmas-releases",
-        "https://github.com/jokergoo/InteractiveComplexHeatmap",
-        "https://github.com/martindyrba/DeepLearningInteractiveVis",
-        "https://gitlab.com/dlr-ve/esy/ioproc",
-        "https://github.com/xaratustrah/iqtools",
-        "https://github.com/ComputationalRadiationPhysics/isaac",
-        "https://gitlab.jsc.fz-juelich.de/jards-user-forum/jards",
-        "https://gitlab.jsc.fz-juelich.de/perftools/jcuber",
-        "https://github.com/JEMRIS/jemris",
-        "https://github.com/jplag/JPlag/",
-        "https://github.com/Biomarker-Development-at-INM7",
-        "https://github.com/FZJ-JSC/JUBE",
-        "https://iffgit.fz-juelich.de/kkr/jukkr",
-        "https://github.com/juaml/julearn",
-        "https://github.com/LRydin/jumpdiff",
-        "https://go.fzj.de/jumper",
-        "https://github.com/PedestrianDynamics/jupedsim",
-        "https://github.com/kreuzert/jupyterhub-outpost",
-        "https://github.com/kreuzert/jupyterhub-outpostspawner",
-        "https://github.com/slcs-jsc/jurassic",
-        "https://github.com/FZJ-JSC/JURI",
-        "https://github.com/kaapana/kaapana",
-        "https://gitlab.com/iam-cms/kadi",
-        "https://github.com/KarlsruheGraphGeneration/KaGen",
-        "https://github.com/kahypar/",
-        "https://github.com/KaHIP/KaMinPar",
-        "https://github.com/kamping-site/kamping",
-        "https://github.com/molaupi/karri",
-        "https://github.com/Ramy-Badr-Ahmed/KD-Tree-Python",
-        "https://github.com/keyproject/key",
-        "https://github.com/LS-Lab/KeYmaeraX-release",
-        "https://github.com/KinFit/KinFit.git",
-        "https://github.com/LRydin/KramersMoyal",
-        "https://github.com/Deep-MI/lapy",
-        "https://github.com/LiberTEM/LiberTEM/",
-        "https://github.com/lightning-uq-box/lightning-uq-box",
-        "https://jugit.fz-juelich.de/iek-10/public/optimization/linmog",
-        "https://github.com/alpaka-group/llama",
-        "https://github.com/FZJ-JSC/LLview",
-        "https://github.com/ajacquey/lynx",
-        "https://github.com/PoisonAlien/maftools",
-        "https://github.com/domschrei/mallob",
-        "https://github.com/alpaka-group/mallocMC",
-        "https://github.com/MassBank",
-        "https://github.com/mala-project/mala",
-        "https://github.com/e0404/matRad",
-        "https://gitlab.com/dlr-sy/mcodac",
-        "https://github.com/rizac/me-compute",
-        "https://github.com/MITK/MITK",
-        "https://github.com/teamtomo/membrain-seg",
-        "https://github.com/Ramy-Badr-Ahmed/Merkle-DAG-Matlab",
-        "https://github.com/bloech/MeshIt",
-        "https://gitlab.dkrz.de/MESSy/MESSy",
-        "https://codebase.helmholtz.cloud/metabolator/metabolator",
-        "https://github.com/al2na/methylKit",
-        "https://github.com/LRydin/MFDFA",
-        "https://git.ufz.de/mhm/mhm",
-        "https://github.com/ccb-sb/mibianto",
-        "https://github.com/micromechanics/indentationGUI",
-        "https://gitlab.desy.de/claus.kleinwort/millepede-ii",
-        "https://github.com/casus/minterpy",
-        "https://github.com/oncoray/mirp",
-        "https://gitlab.jsc.fz-juelich.de/esde/machine-learning/mlair",
-        "https://codebase.helmholtz.cloud/smid55/mmpxrt",
-        "https://git.gfz-potsdam.de/icdp-osg/mdis",
-        "https://github.com/julianreul/mode_behave",
-        "https://jugit.fz-juelich.de/IBG-1/ModSim/MooViE",
-        "https://github.com/slcs-jsc/mptrac",
-        "https://github.com/Open-MSS/MSS",
-        "https://github.com/mtress/mtress",
-        "https://codebase.helmholtz.cloud/fwdc/multiphase/code",
-        "https://github.com/nest/nest-simulator",
-        "https://github.com/nest/nestml",
-        "https://gitlab.desy.de/fs-mcp/nuclear-nexus",
-        "https://github.com/MIC-DKFZ/nnUNet",
-        "https://github.com/Ramy-Badr-Ahmed/Nodejs-TCP-Server-Client",
-        "https://github.com/Ramy-Badr-Ahmed/Nodejs-TLS-Server-Client",
-        "https://github.com/rajewsky-lab/novosparc",
-        "https://git.scc.kit.edu/synergy.o3as/",
-        "https://jugit.fz-juelich.de/sms/odm2sms",
-        "https://github.com/oemof/oemof-solph/",
-        "https://git.opencarp.org/openCARP/openCARP",
-        "https://github.com/openFuelCell2/openFuelCell2",
-        "https://gitlab.opengeosys.org/ogs/ogs",
-        "https://github.com/openPMD/openPMD-api/",
-        "https://git.geomar.de/dam/osadcp_toolbox/",
-        "https://gitlab.com/qtb-hhu/marine/otter",
-        "https://github.com/PalladioSimulator",
-        "https://github.com/pan-training/training-catalogue",
-        "https://github.com/pasta-toolbox/bit_vector/",
-        "https://github.com/PDAF/PDAF",
-        "https://github.com/JuBiotech/peak-performance",
-        "https://github.com/PedestrianDynamics/PedPy",
-        "https://gitlab.jsc.fz-juelich.de/SLPP/pepc/pepc",
-        "https://github.com/PeriHub/PeriHub",
-        "https://github.com/PeriHub/PeriLab.jl",
-        "https://github.com/Helmholtz-AI-Energy/perun",
-        "https://jugit.fz-juelich.de/ped-dyn-emp/petrack",
-        "https://github.com/Ramy-Badr-Ahmed/php-codemeta-crosswalk",
-        "https://github.com/ComputationalRadiationPhysics/picongpu",
-        "https://github.com/BIMSBbioinfo/pigx",
-        "https://github.com/jokergoo/pkgndep",
-        "https://github.com/trixi-framework/PointNeighbors.jl",
-        "https://github.com/anikfal/PostWRF",
-        "https://git.gfz-potsdam.de/vlbi-data-analysis/port",
-        "https://gitlab.jsc.fz-juelich.de/slbio/profasi",
-        "https://github.com/Helmholtz-AI-Energy/propulate",
-        "https://github.com/hzi-braunschweig/pia-system",
-        "https://github.com/PtyLab/PtyLab.py",
-        "https://github.com/KIT-IAI/PyAPI-RTS",
-        "https://github.com/pycomlink/pycomlink",
-        "https://github.com/cmeessen/pyGMS",
-        "https://git.geomar.de/open-source/pyquickmaps",
-        "https://github.com/Parallel-in-Time/pySDC",
-        "https://github.com/icatproject/python-icat",
-        "https://gitlab.com/dlr-sy/pyxmake",
-        "https://github.com/ablab/quast/",
-        "https://github.com/johannespletzer/rf-of-hypersonic-trajectories/",
-        "https://github.com/ddRPB/rpb",
-        "https://github.com/DLR-RM/RAFCON",
-        "https://github.com/Ramy-Badr-Ahmed/Random-Simplex",
-        "https://github.com/wiesenfa/challengeR",
-        "https://github.com/hz-b/rayx",
-        "https://github.com/rcenvironment/rce",
-        "https://github.com/schreiber-lab/reflectorch",
-        "https://gitlab.com/dlr-ve/esy/remix/framework",
-        "https://github.com/ReStoreCpp/ReStore",
-        "https://github.com/jokergoo/rGREAT",
-        "https://github.com/hzi-bifo/RiboDetector",
-        "https://github.com/reactive-systems/RTLola-Frontend",
-        "https://github.com/reactive-systems/RTLola-Interpreter",
-        "https://git.gfz-potsdam.de/fernlab/products/data-portal/s2downloader",
-        "https://github.com/sciapp/sampledb",
-        "https://git.ufz.de/rdm-software/saqc",
-        "https://gitlab.jsc.fz-juelich.de/perftools/scalasca",
-        "https://github.com/scverse/scanpy",
-        "https://github.com/jalalmostafa/SciTS",
-        "https://gitlab.com/score-p/scorep",
-        "https://github.com/rizac/sdaas",
-        "https://github.com/seisbench/seisbench",
-        "https://github.com/SeisComP",
-        "https://codebase.helmholtz.cloud/hub-terra/sms/orchestration",
-        "https://gitlab.com/serghei-model/serghei",
-        "https://gitlab.com/dlr-ve/esy/sfctools/framework",
-        "https://gitlab.com/dlr-shepard",
-        "https://github.com/ByteHamster/ShockHash",
-        "https://github.com/ByteHamster/SicHash",
-        "https://github.com/Ramy-Badr-Ahmed/Signal-Processor",
-        "https://github.com/f-hader/SimCATS/",
-        "https://github.com/jokergoo/simona",
-        "https://github.com/IMSY-DKFZ/simpa",
-        "https://github.com/jokergoo/simplifyEnrichment",
-        "https://github.com/smash-transport/smash",
-        "https://github.com/SMG2S/SMG2S",
-        "https://github.com/Materials-Data-Science-and-Informatics/somesy",
-        "https://github.com/scverse/spatialdata/",
-        "https://codebase.helmholtz.cloud/ufz-sdi/spatialio",
-        "https://git.gfz-potsdam.de/geomultisens/spechomo",
-        "https://github.com/jokergoo/spiralize",
-        "https://github.com/spirit-code/spirit",
-        "https://github.com/DLR-RM/stable-baselines3",
-        "https://gitlab.com/dlr-sy/stmlab",
-        "https://github.com/rizac/stream2segment",
-        "https://github.com/eclipse-sumo/sumo",
-        "https://github.com/evanberkowitz/supervillain",
-        "https://github.com/Ramy-Badr-Ahmed/php-swh-client",
-        "https://github.com/DLR-AMR/t8code",
-        "https://github.com/tamarin-prover/tamarin-prover",
-        "https://github.com/DLR-FT/TBT-Segmentation",
-        "https://jugit.fz-juelich.de/ibg-3/ibg3_data_management/software/projects/tereno-doi/tdoi",
-        "https://codebase.helmholtz.cloud/micromagnetic-modeling/tetrax",
-        "https://github.com/DLR-SC/tigl",
-        "https://github.com/jakobrunge/tigramite",
-        "https://codebase.helmholtz.cloud/ufz-tsm/tsm-orchestration",
-        "https://git.gfz-potsdam.de/id2/tsm/tsm.docker-compose",
-        "https://github.com/DLR-SC/tixi",
-        "https://git.geomar.de/open-source/tomato-toolboxes/tomato",
-        "https://github.com/KudryashevLab/TomoBEAR",
-        "https://github.com/tfp-photonics/treams",
-        "https://github.com/locationtech-archived/geoperil",
-        "https://github.com/usadellab/Trimmomatic",
-        "https://github.com/trixi-framework/TrixiParticles.jl",
-        "https://github.com/HPSCTerrSys/TSMP",
-        "https://github.com/dlr-eoc/ukis-csmask",
-        "https://github.com/DLR-VF/ULTImodel",
-        "https://gitlab.awi.de/bkoch/ume",
-        "https://github.com/UNICORE-EU/",
-        "https://github.com/casus/uqtestfuns",
-        "https://github.com/martinottopaul/UrbEm",
-        "https://github.com/DLR-VF/UrMoAC",
-        "https://github.com/andyco98/UTILE-Oxy/",
-        "https://github.com/bihealth/varfish-server",
-        "https://github.com/rbuehler/vasca",
-        "https://github.com/cmeessen/VelocityConversion",
-        "https://gitlab.com/dlr-ve/esy/vencopy/vencopy",
-        "https://codebase.helmholtz.cloud/mussel/netlogo-northsea-species.git",
-        "https://iffgit.fz-juelich.de/vitess/vitess/-/releases",
-        "https://github.com/vitruv-tools/Vitruv",
-        "https://github.com/BIMSBbioinfo/VoltRon",
-        "https://gitlab.com/one-touch-pipeline/weskit",
-        "https://git.gsi.de/phelix/lv/wombat_ce",
-        "https://github.com/riesgos/gfz-command-line-tool-repository",
-        "https://git.gfz-potsdam.de/fernlab/products/furuno/wrainfo",
-        "https://gitlab.dlr.de/xdibias/xdibias",
-        "https://gitlab.desy.de/cdt/xraypac"
+        {
+            "software_organization": "https://helmholtz.software/software/2x2-3x3-and-nxn-space-filling-curves",
+            "repo_link": "https://github.com/jokergoo/sfcurve"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ai4hpc",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/CoE-RAISE/FZJ/ai4hpc/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/aiida-kkr",
+            "repo_link": "https://github.com/JuDFTteam/aiida-kkr"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/aiida-spirit",
+            "repo_link": "https://github.com/JuDFTteam/aiida-spirit"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/album",
+            "repo_link": "https://gitlab.com/album-app/album"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/alice2modelica",
+            "repo_link": "https://jugit.fz-juelich.de/iek-10/public/tools/alice2modelica"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/allpix-squared",
+            "repo_link": "https://gitlab.cern.ch/allpix-squared/allpix-squared"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/alpaca",
+            "repo_link": "https://github.com/INM-6/alpaca"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/alpaka",
+            "repo_link": "https://github.com/alpaka-group/alpaka"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/amiris",
+            "repo_link": "https://gitlab.com/dlr-ve/esy/amiris/amiris"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/anndata",
+            "repo_link": "https://github.com/scverse/anndata"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ansible-collection-toolkit",
+            "repo_link": "https://github.com/hifis-net/ansible-collection-toolkit"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/anvio",
+            "repo_link": "https://github.com/merenlab/anvio"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/arbor",
+            "repo_link": "https://github.com/arbor-sim/arbor/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ardoco",
+            "repo_link": "https://github.com/ArDoCo/Core"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/arosics",
+            "repo_link": "https://git.gfz-potsdam.de/danschef/arosics"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/atomec",
+            "repo_link": "https://github.com/atomec-project/atoMEC"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/autogaita",
+            "repo_link": "https://github.com/mahan-hosseini/AutoGaitA"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/autopq",
+            "repo_link": "https://github.com/SMEISEN/AutoPQ"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/autopv",
+            "repo_link": "https://github.com/SMEISEN/AutoPV"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/autowp",
+            "repo_link": "https://github.com/SMEISEN/AutoWP"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/aviator",
+            "repo_link": "https://github.com/CCB-SB/Aviator"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/awi-gpt",
+            "repo_link": "https://github.com/CliDyn"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/awi-pangaea-ai-hub",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/base-repo",
+            "repo_link": "https://github.com/kit-data-manager/base-repo"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/basic",
+            "repo_link": "https://github.com/marrlab/BaSiC"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/basicpy",
+            "repo_link": "https://github.com/peng-lab/BaSiCPy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/beluga",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/bending-stiffness",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/Bending-Stiffness"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/beos",
+            "repo_link": "https://gitlab.com/dlr-sy/beos"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/bifurcations-discrete-maps",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/Bifurcations-Discrete-Maps"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/bioautoml",
+            "repo_link": "https://github.com/Bonidia/BioAutoML"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/blenderproc",
+            "repo_link": "https://github.com/DLR-RM/BlenderProc"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/boxbeam",
+            "repo_link": "https://gitlab.com/dlr-sy/boxbeam"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/brainprint",
+            "repo_link": "https://github.com/Deep-MI/brainprint"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cadet",
+            "repo_link": "https://github.com/cadet/CADET-Core"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/calibr8",
+            "repo_link": "https://github.com/JuBiotech/calibr8"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cat4kit",
+            "repo_link": "https://codebase.helmholtz.cloud/cat4kit/cat4kit-docker"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/catena",
+            "repo_link": "https://gitlab.dlr.de/catena/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/celldetection",
+            "repo_link": "https://github.com/FZJ-INM1-BDA/celldetection"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cellrank",
+            "repo_link": "https://github.com/theislab/cellrank"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/chase",
+            "repo_link": "https://github.com/ChASE-library/ChASE"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cheetah",
+            "repo_link": "https://github.com/desy-ml/cheetah.git"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/chemotion-eln",
+            "repo_link": "https://github.com/ComPlat/chemotion_ELN"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/climate-index-collection",
+            "repo_link": "https://github.com/MarcoLandtHayen/climate_index_collection"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cimpredict",
+            "repo_link": "https://github.com/tonitacker/CIMPredict"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/circlize",
+            "repo_link": "https://github.com/jokergoo/circlize"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/citation-file-format",
+            "repo_link": "https://github.com/citation-file-format/citation-file-format"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/citychem",
+            "repo_link": "https://github.com/matthkarl/citychem"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/climsight",
+            "repo_link": "https://github.com/CliDyn/climsight"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cnpypp",
+            "repo_link": "https://gitlab.iap.kit.edu/mreininghaus/cnpypp/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cola",
+            "repo_link": "https://github.com/jokergoo/cola"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/collector-app",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/comando",
+            "repo_link": "https://jugit.fz-juelich.de/iek-10/public/optimization/comando"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/comola",
+            "repo_link": "https://github.com/Helmholtz-UFZ/CoMOLA"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/complexheatmap",
+            "repo_link": "https://github.com/jokergoo/ComplexHeatmap"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cipm",
+            "repo_link": "https://github.com/CIPM-tools/CIPM"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/copy-paste-imputation",
+            "repo_link": "https://github.com/KIT-IAI/CopyPasteImputation"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/corc",
+            "repo_link": "https://github.com/KIT-TVA/CorC"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/corsika",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cosmoscout-vr",
+            "repo_link": "https://github.com/cosmoscout/cosmoscout-vr"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cp2k",
+            "repo_link": "https://github.com/cp2k/cp2k"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cryogrid",
+            "repo_link": "https://github.com/CryoGrid/CryoGridCommunity_source"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/crystfel",
+            "repo_link": "https://gitlab.desy.de/thomas.white/crystfel/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cuas-mpi",
+            "repo_link": "https://github.com/tudasc/CUAS-MPI"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cubegui",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/perftools/cubegui"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cubelib",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/perftools/cubelib"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cubew",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/perftools/cubew"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cudamemtest",
+            "repo_link": "https://github.com/ComputationalRadiationPhysics/cuda_memtest"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/cupla",
+            "repo_link": "https://github.com/alpaka-group/cupla"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/damnit",
+            "repo_link": "https://github.com/European-XFEL/DAMNIT"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/dasf-messaging-python",
+            "repo_link": "https://codebase.helmholtz.cloud/dasf/dasf-messaging-python"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/datadesc",
+            "repo_link": "https://github.com/FZJ-IEK3-VSA/DataDesc/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/datalad",
+            "repo_link": "https://github.com/datalad/datalad"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/datalad-container-extension",
+            "repo_link": "https://github.com/datalad/datalad-container"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/datalad-next-extension",
+            "repo_link": "https://github.com/datalad/datalad-next"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/datasail",
+            "repo_link": "https://github.com/kalininalab/DataSAIL"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/dcache",
+            "repo_link": "https://github.com/dCache/dcache"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/deeploki",
+            "repo_link": "https://gitlab.com/qtb-hhu/marine/DeepLOKI"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/deploy2zenodo",
+            "repo_link": "https://gitlab.com/deploy2zenodo/deploy2zenodo"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/deus",
+            "repo_link": "https://github.com/gfzriesgos/deus"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/digital-earth-viewer",
+            "repo_link": "https://git.geomar.de/digital-earth/digital-earth-viewer"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/dirschema",
+            "repo_link": "https://github.com/Materials-Data-Science-and-Informatics/dirschema"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/displam",
+            "repo_link": "https://gitlab.com/dlr-sy/displam"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/dl4pude",
+            "repo_link": "https://github.com/PedestrianDynamics/DL4PuDe"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/earth-system-model-evaluation-tool-esmvaltool",
+            "repo_link": "https://github.com/ESMValGroup/ESMValTool"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/easywave",
+            "repo_link": "https://git.gfz-potsdam.de/id2/geoperil/easyWave"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/egsim",
+            "repo_link": "https://github.com/rizac/egsim"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ehrapy",
+            "repo_link": "https://github.com/theislab/ehrapy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/electrode",
+            "repo_link": "https://github.com/robeme/lammps"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/elephant",
+            "repo_link": "https://github.com/NeuralEnsemble/elephant"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/emipy",
+            "repo_link": "https://jugit.fz-juelich.de/network-science-group/emipy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/enpt",
+            "repo_link": "https://git.gfz-potsdam.de/EnMAP/GFZ_Tools_EnMAP_BOX/EnPT"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/enrichedheatmap",
+            "repo_link": "https://github.com/jokergoo/EnrichedHeatmap"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/esm-tools",
+            "repo_link": "https://github.com/esm-tools/esm_tools"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/esmvalcore",
+            "repo_link": "https://github.com/ESMValGroup/ESMValCore"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ethosfine-framework-for-integrated-energy-system-assessment",
+            "repo_link": "https://github.com/FZJ-IEK3-VSA/FINE"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/hisim",
+            "repo_link": "https://github.com/FZJ-IEK3-VSA/HiSim"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ethospenalps",
+            "repo_link": "https://github.com/FZJ-IEK3-VSA/ETHOS_PeNALPS"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ethosreflow",
+            "repo_link": "https://github.com/FZJ-IEK3-VSA/ethos.REFLOW"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ethoszoomin",
+            "repo_link": "https://github.com/FZJ-IEK3-VSA/ETHOS.zoomin"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/elias",
+            "repo_link": "https://gitlab.kit.edu/julian.quinting/elias-2.0"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/beta-faircore4eosc",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/beta-faircore4eosc"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fairmq",
+            "repo_link": "https://github.com/FairRootGroup/FairMQ"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fame",
+            "repo_link": "https://gitlab.com/fame-framework/fame-io"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fastscape-toolbox",
+            "repo_link": "https://github.com/fastscape-lem/fastscape"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fastsurfer",
+            "repo_link": "https://github.com/deep-MI/FastSurfer/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fatsegnet",
+            "repo_link": "https://github.com/Deep-MI/FatSegNet"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fesom",
+            "repo_link": "https://github.com/FESOM/fesom2"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fishinspector",
+            "repo_link": "https://github.com/sscholz-UFZ/FishInspector"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fiware-deployment-kit",
+            "repo_link": "https://jugit.fz-juelich.de/iek-10/public/ict-platform/deployment"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fleur",
+            "repo_link": "https://iffgit.fz-juelich.de/fleur/fleur"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/formatfuzzer",
+            "repo_link": "https://github.com/uds-se/FormatFuzzer"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fracspy",
+            "repo_link": "https://github.com/FraCSPy/FraCSPy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/fsqc",
+            "repo_link": "https://github.com/Deep-MI/fsqc"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/gaia",
+            "repo_link": "https://gitlab.dlr.de/pf-plp/gaia-group"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/gasnetsim",
+            "repo_link": "https://jugit.fz-juelich.de/iek-10/public/simulation/gasnetsim"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/geomultisens",
+            "repo_link": "https://git.gfz-potsdam.de/geomultisens"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/gfzrnx",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ginkgo",
+            "repo_link": "https://github.com/ginkgo-project/ginkgo/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/gipptools",
+            "repo_link": "https://git.gfz-potsdam.de/gipp/gipptools"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/glaes",
+            "repo_link": "https://github.com/FZJ-IEK3-VSA/geokit"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/global-benchmark-database-gbd",
+            "repo_link": "https://github.com/Udopia/gbd"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/gmgpolar",
+            "repo_link": "https://github.com/mknaranja/GMGPolar"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/goac",
+            "repo_link": "https://iffgit.fz-juelich.de/k.koester/goac"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/golem",
+            "repo_link": "https://github.com/ajacquey/golem"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/gravis",
+            "repo_link": "https://git.gfz-potsdam.de/gravis"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/gr-framework",
+            "repo_link": "https://github.com/sciapp/gr"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/gstools",
+            "repo_link": "https://github.com/GeoStat-Framework/GSTools"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/habitat-sampler",
+            "repo_link": "https://git.gfz-potsdam.de/habitat-sampler/HabitatSampler"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/hcocena",
+            "repo_link": "https://github.com/MarieOestreich/hCoCena"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/heat",
+            "repo_link": "https://github.com/helmholtz-analytics/heat"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/heatnetsim",
+            "repo_link": "https://jugit.fz-juelich.de/iek-10/public/simulation/heatnetsim"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/heliport",
+            "repo_link": "https://codebase.helmholtz.cloud/heliport/heliport"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/hifis-rsd",
+            "repo_link": "https://codebase.helmholtz.cloud/research-software-directory/RSD-as-a-service"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/higgs-dataset-training",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/Higgs-Dataset-Training"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/hilbertcurve",
+            "repo_link": "https://github.com/jokergoo/HilbertCurve"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/hipsta",
+            "repo_link": "https://github.com/Deep-MI/hipsta"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/holowizard",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/hybridmt",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/icgem",
+            "repo_link": "https://git.gfz-potsdam.de/icgem"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ideal-equilibrium-oxygen-membrane-reactor",
+            "repo_link": "https://github.com/KabitGit/Ideal-Equilibrium-Oxygen-Membrane-Reactor"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/igmas",
+            "repo_link": "https://git.gfz-potsdam.de/igmas/igmas-releases"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/interactivecomplexheatmap",
+            "repo_link": "https://github.com/jokergoo/InteractiveComplexHeatmap"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/interactivevis",
+            "repo_link": "https://github.com/martindyrba/DeepLearningInteractiveVis"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ioproc",
+            "repo_link": "https://gitlab.com/dlr-ve/esy/ioproc"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/iqtools",
+            "repo_link": "https://github.com/xaratustrah/iqtools"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/isaac",
+            "repo_link": "https://github.com/ComputationalRadiationPhysics/isaac"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jards",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/jards-user-forum/jards"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jcuber",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/perftools/jcuber"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jemris",
+            "repo_link": "https://github.com/JEMRIS/jemris"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jplag",
+            "repo_link": "https://github.com/jplag/JPlag/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jtrack",
+            "repo_link": "https://github.com/Biomarker-Development-at-INM7"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jube",
+            "repo_link": "https://github.com/FZJ-JSC/JUBE"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jukkr",
+            "repo_link": "https://iffgit.fz-juelich.de/kkr/jukkr"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/julearn",
+            "repo_link": "https://github.com/juaml/julearn"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jumpdiff",
+            "repo_link": "https://github.com/LRydin/jumpdiff"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jumper",
+            "repo_link": "https://go.fzj.de/jumper"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jupedsim",
+            "repo_link": "https://github.com/PedestrianDynamics/jupedsim"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jupyterhub-outpost",
+            "repo_link": "https://github.com/kreuzert/jupyterhub-outpost"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jupyterhub-outpostspawner",
+            "repo_link": "https://github.com/kreuzert/jupyterhub-outpostspawner"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/jurassic",
+            "repo_link": "https://github.com/slcs-jsc/jurassic"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/juri",
+            "repo_link": "https://github.com/FZJ-JSC/JURI"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kaapana",
+            "repo_link": "https://github.com/kaapana/kaapana"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kadi4mat",
+            "repo_link": "https://gitlab.com/iam-cms/kadi"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kagen-communication-free-massively-distributed-graph-generators",
+            "repo_link": "https://github.com/KarlsruheGraphGeneration/KaGen"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kahypar",
+            "repo_link": "https://github.com/kahypar/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kaminpar",
+            "repo_link": "https://github.com/KaHIP/KaMinPar"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kamping-karlsruhe-mpi-next-generation",
+            "repo_link": "https://github.com/kamping-site/kamping"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/karri",
+            "repo_link": "https://github.com/molaupi/karri"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kd-tree-python",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/KD-Tree-Python"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/key",
+            "repo_link": "https://github.com/keyproject/key"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/keymaera-x",
+            "repo_link": "https://github.com/LS-Lab/KeYmaeraX-release"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kinfit",
+            "repo_link": "https://github.com/KinFit/KinFit.git"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/kramersmoyal",
+            "repo_link": "https://github.com/LRydin/KramersMoyal"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/lapy",
+            "repo_link": "https://github.com/Deep-MI/lapy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/libertem",
+            "repo_link": "https://github.com/LiberTEM/LiberTEM/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/lightning-uq-box",
+            "repo_link": "https://github.com/lightning-uq-box/lightning-uq-box"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/linmog",
+            "repo_link": "https://jugit.fz-juelich.de/iek-10/public/optimization/linmog"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/llama",
+            "repo_link": "https://github.com/alpaka-group/llama"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/llview",
+            "repo_link": "https://github.com/FZJ-JSC/LLview"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/lynx",
+            "repo_link": "https://github.com/ajacquey/lynx"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/maftools",
+            "repo_link": "https://github.com/PoisonAlien/maftools"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mainzelliste",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mallob",
+            "repo_link": "https://github.com/domschrei/mallob"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mallocmc",
+            "repo_link": "https://github.com/alpaka-group/mallocMC"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mapman",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/massbank",
+            "repo_link": "https://github.com/MassBank"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/materials-learning-algorithms",
+            "repo_link": "https://github.com/mala-project/mala"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/matrad",
+            "repo_link": "https://github.com/e0404/matRad"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mcodac",
+            "repo_link": "https://gitlab.com/dlr-sy/mcodac"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/me-compute",
+            "repo_link": "https://github.com/rizac/me-compute"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mitk",
+            "repo_link": "https://github.com/MITK/MITK"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/membrain-v2",
+            "repo_link": "https://github.com/teamtomo/membrain-seg"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mercy",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/merkle-dag-matlab",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/Merkle-DAG-Matlab"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/meshit",
+            "repo_link": "https://github.com/bloech/MeshIt"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/messy",
+            "repo_link": "https://gitlab.dkrz.de/MESSy/MESSy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/metabolator",
+            "repo_link": "https://codebase.helmholtz.cloud/metabolator/metabolator"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/methylkit",
+            "repo_link": "https://github.com/al2na/methylKit"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/metrics-reloaded",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mfdfa",
+            "repo_link": "https://github.com/LRydin/MFDFA"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mhm",
+            "repo_link": "https://git.ufz.de/mhm/mhm"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mibianto",
+            "repo_link": "https://github.com/ccb-sb/mibianto"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/micromechanics-indentationgui",
+            "repo_link": "https://github.com/micromechanics/indentationGUI"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/millepede-ii",
+            "repo_link": "https://gitlab.desy.de/claus.kleinwort/millepede-ii"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/minterpy",
+            "repo_link": "https://github.com/casus/minterpy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mirp",
+            "repo_link": "https://github.com/oncoray/mirp"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mlair",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/esde/machine-learning/mlair"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mmpxrt",
+            "repo_link": "https://codebase.helmholtz.cloud/smid55/mmpxrt"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mdis",
+            "repo_link": "https://git.gfz-potsdam.de/icdp-osg/mdis"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mode-behave",
+            "repo_link": "https://github.com/julianreul/mode_behave"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/moovie",
+            "repo_link": "https://jugit.fz-juelich.de/IBG-1/ModSim/MooViE"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mptrac",
+            "repo_link": "https://github.com/slcs-jsc/mptrac"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mss",
+            "repo_link": "https://github.com/Open-MSS/MSS"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/mtress",
+            "repo_link": "https://github.com/mtress/mtress"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/multiphase-code-repository-by-hzdr",
+            "repo_link": "https://codebase.helmholtz.cloud/fwdc/multiphase/code"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/nest",
+            "repo_link": "https://github.com/nest/nest-simulator"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/nest-ml",
+            "repo_link": "https://github.com/nest/nestml"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/nuclear-nexus",
+            "repo_link": "https://gitlab.desy.de/fs-mcp/nuclear-nexus"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/nnu-net",
+            "repo_link": "https://github.com/MIC-DKFZ/nnUNet"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/nodejs-tcp-server-client",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/Nodejs-TCP-Server-Client"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/nodejs-tls-server-client",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/Nodejs-TLS-Server-Client"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/novosparc",
+            "repo_link": "https://github.com/rajewsky-lab/novosparc"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/o3as",
+            "repo_link": "https://git.scc.kit.edu/synergy.o3as/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/odm2sms",
+            "repo_link": "https://jugit.fz-juelich.de/sms/odm2sms"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/odv",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/oemof-solph",
+            "repo_link": "https://github.com/oemof/oemof-solph/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/opencarp",
+            "repo_link": "https://git.opencarp.org/openCARP/openCARP"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/openfuelcell2",
+            "repo_link": "https://github.com/openFuelCell2/openFuelCell2"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/opengeosys",
+            "repo_link": "https://gitlab.opengeosys.org/ogs/ogs"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/openpmd-api",
+            "repo_link": "https://github.com/openPMD/openPMD-api/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/osadcp-toolbox",
+            "repo_link": "https://git.geomar.de/dam/osadcp_toolbox/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/otter",
+            "repo_link": "https://gitlab.com/qtb-hhu/marine/otter"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/palladio",
+            "repo_link": "https://github.com/PalladioSimulator"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/training-catalogue-for-photon-neutron",
+            "repo_link": "https://github.com/pan-training/training-catalogue"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pasta-bit-vector",
+            "repo_link": "https://github.com/pasta-toolbox/bit_vector/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pdaf",
+            "repo_link": "https://github.com/PDAF/PDAF"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/peakperformance",
+            "repo_link": "https://github.com/JuBiotech/peak-performance"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pecon",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pedpy",
+            "repo_link": "https://github.com/PedestrianDynamics/PedPy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pepc",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/SLPP/pepc/pepc"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/perihub",
+            "repo_link": "https://github.com/PeriHub/PeriHub"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/perilab",
+            "repo_link": "https://github.com/PeriHub/PeriLab.jl"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/perun",
+            "repo_link": "https://github.com/Helmholtz-AI-Energy/perun"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/petrack",
+            "repo_link": "https://jugit.fz-juelich.de/ped-dyn-emp/petrack"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/php-codemeta-crosswalk",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/php-codemeta-crosswalk"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/picongpu",
+            "repo_link": "https://github.com/ComputationalRadiationPhysics/picongpu"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pigx",
+            "repo_link": "https://github.com/BIMSBbioinfo/pigx"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pkgndep",
+            "repo_link": "https://github.com/jokergoo/pkgndep"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pointneighborsjl",
+            "repo_link": "https://github.com/trixi-framework/PointNeighbors.jl"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/postwrf",
+            "repo_link": "https://github.com/anikfal/PostWRF"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/potsdam-open-source-radio-interferometry-tool",
+            "repo_link": "https://git.gfz-potsdam.de/vlbi-data-analysis/port"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/profasi",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/slbio/profasi"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/propulate",
+            "repo_link": "https://github.com/Helmholtz-AI-Energy/propulate"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pia",
+            "repo_link": "https://github.com/hzi-braunschweig/pia-system"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ptylab",
+            "repo_link": "https://github.com/PtyLab/PtyLab.py"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pyapi-rts",
+            "repo_link": "https://github.com/KIT-IAI/PyAPI-RTS"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pycomlink",
+            "repo_link": "https://github.com/pycomlink/pycomlink"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pygms",
+            "repo_link": "https://github.com/cmeessen/pyGMS"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pyquickmaps",
+            "repo_link": "https://git.geomar.de/open-source/pyquickmaps"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pysdc",
+            "repo_link": "https://github.com/Parallel-in-Time/pySDC"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/python-icat",
+            "repo_link": "https://github.com/icatproject/python-icat"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/pyxmake",
+            "repo_link": "https://gitlab.com/dlr-sy/pyxmake"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/quast",
+            "repo_link": "https://github.com/ablab/quast/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/radiative-forcing-of-hypersonic-aircraft-trajectories",
+            "repo_link": "https://github.com/johannespletzer/rf-of-hypersonic-trajectories/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/radplanbio",
+            "repo_link": "https://github.com/ddRPB/rpb"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/rafcon",
+            "repo_link": "https://github.com/DLR-RM/RAFCON"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/random-simplex",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/Random-Simplex"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/rankings-reloaded",
+            "repo_link": "https://github.com/wiesenfa/challengeR"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/rayx",
+            "repo_link": "https://github.com/hz-b/rayx"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/rce",
+            "repo_link": "https://github.com/rcenvironment/rce"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/reflectorch",
+            "repo_link": "https://github.com/schreiber-lab/reflectorch"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/remix",
+            "repo_link": "https://gitlab.com/dlr-ve/esy/remix/framework"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/restore",
+            "repo_link": "https://github.com/ReStoreCpp/ReStore"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/rgreat",
+            "repo_link": "https://github.com/jokergoo/rGREAT"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ribodetector",
+            "repo_link": "https://github.com/hzi-bifo/RiboDetector"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/rtlola-frontend",
+            "repo_link": "https://github.com/reactive-systems/RTLola-Frontend"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/rtlola-interpreter",
+            "repo_link": "https://github.com/reactive-systems/RTLola-Interpreter"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/s2downloader",
+            "repo_link": "https://git.gfz-potsdam.de/fernlab/products/data-portal/s2downloader"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/sampledb",
+            "repo_link": "https://github.com/sciapp/sampledb"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/saqc",
+            "repo_link": "https://git.ufz.de/rdm-software/saqc"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/scalasca",
+            "repo_link": "https://gitlab.jsc.fz-juelich.de/perftools/scalasca"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/scanpy",
+            "repo_link": "https://github.com/scverse/scanpy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/scits",
+            "repo_link": "https://github.com/jalalmostafa/SciTS"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/score-p",
+            "repo_link": "https://gitlab.com/score-p/scorep"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/sdaas",
+            "repo_link": "https://github.com/rizac/sdaas"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/seisbench",
+            "repo_link": "https://github.com/seisbench/seisbench"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/seiscomp",
+            "repo_link": "https://github.com/SeisComP"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/sensor-management-system",
+            "repo_link": "https://codebase.helmholtz.cloud/hub-terra/sms/orchestration"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/serghei",
+            "repo_link": "https://gitlab.com/serghei-model/serghei"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/sfctools",
+            "repo_link": "https://gitlab.com/dlr-ve/esy/sfctools/framework"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/shepard",
+            "repo_link": "https://gitlab.com/dlr-shepard"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/shockhash",
+            "repo_link": "https://github.com/ByteHamster/ShockHash"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/sichash",
+            "repo_link": "https://github.com/ByteHamster/SicHash"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/signal-processor",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/Signal-Processor"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/simcats",
+            "repo_link": "https://github.com/f-hader/SimCATS/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/simona",
+            "repo_link": "https://github.com/jokergoo/simona"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/simpa",
+            "repo_link": "https://github.com/IMSY-DKFZ/simpa"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/simplifyenrichment",
+            "repo_link": "https://github.com/jokergoo/simplifyEnrichment"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/smash",
+            "repo_link": "https://github.com/smash-transport/smash"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/smg2s",
+            "repo_link": "https://github.com/SMG2S/SMG2S"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/somesy",
+            "repo_link": "https://github.com/Materials-Data-Science-and-Informatics/somesy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/spatialdata-framework",
+            "repo_link": "https://github.com/scverse/spatialdata/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/spatialio",
+            "repo_link": "https://codebase.helmholtz.cloud/ufz-sdi/spatialio"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/spechomo",
+            "repo_link": "https://git.gfz-potsdam.de/geomultisens/spechomo"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/spex",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/spiralize",
+            "repo_link": "https://github.com/jokergoo/spiralize"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/spirit",
+            "repo_link": "https://github.com/spirit-code/spirit"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/stable-baselines3",
+            "repo_link": "https://github.com/DLR-RM/stable-baselines3"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/stmlab",
+            "repo_link": "https://gitlab.com/dlr-sy/stmlab"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/stream2segment",
+            "repo_link": "https://github.com/rizac/stream2segment"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/sumo",
+            "repo_link": "https://github.com/eclipse-sumo/sumo"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/supervillain",
+            "repo_link": "https://github.com/evanberkowitz/supervillain"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/swh-client",
+            "repo_link": "https://github.com/Ramy-Badr-Ahmed/php-swh-client"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/t8code",
+            "repo_link": "https://github.com/DLR-AMR/t8code"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tamarin-prover",
+            "repo_link": "https://github.com/tamarin-prover/tamarin-prover"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tbt-segmentation",
+            "repo_link": "https://github.com/DLR-FT/TBT-Segmentation"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tereno-doi",
+            "repo_link": "https://jugit.fz-juelich.de/ibg-3/ibg3_data_management/software/projects/tereno-doi/tdoi"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tetrax",
+            "repo_link": "https://codebase.helmholtz.cloud/micromagnetic-modeling/tetrax"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tigl",
+            "repo_link": "https://github.com/DLR-SC/tigl"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tigramite",
+            "repo_link": "https://github.com/jakobrunge/tigramite"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/timeio",
+            "repo_link": "https://codebase.helmholtz.cloud/ufz-tsm/tsm-orchestration"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/timeseries-management",
+            "repo_link": "https://git.gfz-potsdam.de/id2/tsm/tsm.docker-compose"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tixi",
+            "repo_link": "https://github.com/DLR-SC/tixi"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tomato-tools",
+            "repo_link": "https://git.geomar.de/open-source/tomato-toolboxes/tomato"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tomobear",
+            "repo_link": "https://github.com/KudryashevLab/TomoBEAR"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/treams",
+            "repo_link": "https://github.com/tfp-photonics/treams"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tridec-cloud",
+            "repo_link": "https://github.com/locationtech-archived/geoperil"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/trimmomatic",
+            "repo_link": "https://github.com/usadellab/Trimmomatic"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/trixiparticlesjl",
+            "repo_link": "https://github.com/trixi-framework/TrixiParticles.jl"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/tsmp",
+            "repo_link": "https://github.com/HPSCTerrSys/TSMP"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ukis-csmask",
+            "repo_link": "https://github.com/dlr-eoc/ukis-csmask"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ultimodel",
+            "repo_link": "https://github.com/DLR-VF/ULTImodel"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/ultramassexplorer-ume",
+            "repo_link": "https://gitlab.awi.de/bkoch/ume"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/unicore",
+            "repo_link": "https://github.com/UNICORE-EU/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/uqtestfuns",
+            "repo_link": "https://github.com/casus/uqtestfuns"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/urbem-urban-emission-downscaling-for-air-quality-modeling",
+            "repo_link": "https://github.com/martinottopaul/UrbEm"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/urmoac",
+            "repo_link": "https://github.com/DLR-VF/UrMoAC"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/utile-oxy",
+            "repo_link": "https://github.com/andyco98/UTILE-Oxy/"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/varfish",
+            "repo_link": "https://github.com/bihealth/varfish-server"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/vasca",
+            "repo_link": "https://github.com/rbuehler/vasca"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/velocityconversion",
+            "repo_link": "https://github.com/cmeessen/VelocityConversion"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/vencopy",
+            "repo_link": "https://gitlab.com/dlr-ve/esy/vencopy/vencopy"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/vinos",
+            "repo_link": "https://codebase.helmholtz.cloud/mussel/netlogo-northsea-species.git"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/vitess",
+            "repo_link": "https://iffgit.fz-juelich.de/vitess/vitess/-/releases"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/vitruvius",
+            "repo_link": "https://github.com/vitruv-tools/Vitruv"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/voltron",
+            "repo_link": "https://github.com/BIMSBbioinfo/VoltRon"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/weskit",
+            "repo_link": "https://gitlab.com/one-touch-pipeline/weskit"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/wombat",
+            "repo_link": "https://git.gsi.de/phelix/lv/wombat_ce"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/wps-command-line-tool-repository",
+            "repo_link": "https://github.com/riesgos/gfz-command-line-tool-repository"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/wrainfo",
+            "repo_link": "https://git.gfz-potsdam.de/fernlab/products/furuno/wrainfo"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/xcascade",
+            "repo_link": ""
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/xdibias",
+            "repo_link": "https://gitlab.dlr.de/xdibias/xdibias"
+        },
+        {
+            "software_organization": "https://helmholtz.software/software/xraypac",
+            "repo_link": "https://gitlab.desy.de/cdt/xraypac"
+        }
     ]
 }
