@@ -59,6 +59,27 @@ def get_repo_links(file_name_or_path):
     with open(file_name_or_path, "w", encoding="utf-8") as wf:
         json.dump(file_content, wf, ensure_ascii=False, indent=4)
 
-get_repo_links("./files/software_pages.json")
+
+def get_gitlab_project_id(repo_link):
+
+    try:
+        driver.get(repo_link)
+    except Exception as e:
+        return ""
+    
+    driver.implicitly_wait(10)
+
+    try: 
+        span_element = driver.find_element(By.XPATH, "//span[@itemprop='identifier' and @data-testid='project-id-content']")
+        project_id = span_element.text.strip().split(" ")[2]
+        return project_id
+    except NoSuchElementException:
+        try:
+            alert = driver.find_element(By.CLASS_NAME, "gl-alert-body")
+            return ""
+        except NoSuchElementException:
+            return ""
+
+#get_repo_links("./files/software_pages.json")
 #get_software_page_links(page, ROWS, page_links)
 

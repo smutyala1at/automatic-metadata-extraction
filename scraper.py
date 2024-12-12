@@ -10,7 +10,10 @@ load_dotenv()
 
 
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
+GITHUB_HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
+
+GITLAB_TOKEN = os.getenv('GITLAB_TOKEN')
+GITLAB_HEADERS = {"Authorization": f"token {GITLAB_TOKEN}"} if GITLAB_TOKEN else {}
 
 def fetch_repos_by_query(query, max_repos, per_page):
     """Fetch repositories based on a search query.
