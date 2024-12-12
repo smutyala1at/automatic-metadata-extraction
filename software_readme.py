@@ -5,20 +5,21 @@ from scraper import GITHUB_HEADERS, GITLAB_HEADERS, clean_readme
 from selenium_scraping import get_gitlab_project_id
 
 def get_gitlab_readme_content(gitlab_instance_url, project_id):
-    url = f"{gitlab_instance_url}/api/v4/projects/{project_id}/repository/tree"
+    url = f"https://{gitlab_instance_url}/api/v4/projects/{project_id}/repository/tree/"
     response = requests.get(url, GITLAB_HEADERS)
+    print(url)
 
     if response.status_code == 200:
         files = response.json()
 
         for file in files:
-            if file['name'] == 'README.md':
-                file_url = file['url']
+            if file['name'].lower() == 'readme.md':
+                file_url = f"https://{gitlab_instance_url}/api/v4/projects/{project_id}/repository/files/{file['path']}/raw"
                 response = requests.get(file_url, GITLAB_HEADERS)
+                
 
                 if response.status_code == 200:
-                    file_content_base64 = response.json()['content']
-                    file_content = base64.b64decode(file_content_base64).decode('utf-8')
+                    file_content = response.text
                     return file_content
 
         return None  # README not found
@@ -36,8 +37,9 @@ def get_github_readme_content(repo_full_name):
             if file['name'].lower() == 'readme.md':  # Look for README.md
                 readme_response = requests.get(file['download_url'], headers=GITHUB_HEADERS)
                 if readme_response.status_code == 200:
-                    return clean_readme(readme_response.text) # clean the readme
+                    return readme_response.text
                 else:
+                    print("failed github", contents_url)
                     raise Exception(f"Failed to fetch README: {readme_response.status_code}")
     else:
         raise Exception(f"Failed to fetch contents: {response.status_code} {response.text}")
@@ -48,12 +50,13 @@ def get_full_name(url):
     if not url.startswith("https://github.com/"):
         return None
 
-    full_name = url.split("https://github.com/")[1]
+    parts = url.split("https://github.com/")[1].split("/")
 
-    if len(full_name.split("/")) < 2:
+    if len(parts) < 2:
         return None
     
-    return full_name
+    parts = [part for part in parts if part]
+    return "/".join(parts[:])
 
 
 with open("./files/software_pages.json", "r", encoding="utf-8") as rf:
