@@ -1,105 +1,128 @@
-import base64
-import json
 import requests
-from scraper import GITHUB_HEADERS, GITLAB_HEADERS, clean_readme
+import logging
+import json
 from selenium_scraping import get_gitlab_project_id
+from scraper import GITHUB_HEADERS, GITLAB_HEADERS
 
-def get_gitlab_readme_content(gitlab_instance_url, project_id):
-    url = f"https://{gitlab_instance_url}/api/v4/projects/{project_id}/repository/tree/"
-    response = requests.get(url, GITLAB_HEADERS)
-    print(url)
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+VALID_README_NAMES = [
+    'readme.md', 'readme.markdown', 'readme.txt',
+    'readme', 'readme.rst', 'readme.html',
+    'readme.adoc', 'readme.asciidoc'
+]
+
+def fetch_file_content(url, headers):
+    """Fetch the content of a file given its URL."""
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
-        files = response.json()
+        return response.text
+    else:
+        logging.error(f"Failed to fetch file from {url} with status code {response.status_code}")
+        return None
 
-        for file in files:
-            if file['name'].lower() == 'readme.md':
+def get_gitlab_readme_content(gitlab_instance_url, project_id, headers):
+    """Fetch the README.md content from a GitLab repository."""
+    try:
+        repo_tree_url = f"https://{gitlab_instance_url}/api/v4/projects/{project_id}/repository/tree"
+        response = requests.get(repo_tree_url, headers=headers)
+        logging.info(f"Fetching repository tree: {repo_tree_url}")
+
+        if response.status_code != 200:
+            logging.error(f"Error fetching repository tree: {response.status_code}")
+            return None
+
+        for file in response.json():
+            if file['name'].lower() in VALID_README_NAMES:
                 file_url = f"https://{gitlab_instance_url}/api/v4/projects/{project_id}/repository/files/{file['path']}/raw"
-                response = requests.get(file_url, GITLAB_HEADERS)
-                
+                logging.info(f"Found README.md. Fetching content from: {file_url}")
+                return fetch_file_content(file_url, headers)
 
-                if response.status_code == 200:
-                    file_content = response.text
-                    return file_content
-
-        return None  # README not found
-
-    else:
-        print(f"Error fetching repository tree: {response.status_code}")
+        logging.warning("README.md not found in the repository.")
         return None
 
-def get_github_readme_content(repo_full_name):
-    contents_url = f"https://api.github.com/repos/{repo_full_name}/contents"
-    response = requests.get(contents_url, headers=GITHUB_HEADERS)
-    if response.status_code == 200:
-        contents = response.json()
-        for file in contents:
-            if file['name'].lower() == 'readme.md':  # Look for README.md
-                readme_response = requests.get(file['download_url'], headers=GITHUB_HEADERS)
-                if readme_response.status_code == 200:
-                    return readme_response.text
-                else:
-                    print("failed github", contents_url)
-                    raise Exception(f"Failed to fetch README: {readme_response.status_code}")
-    else:
-        raise Exception(f"Failed to fetch contents: {response.status_code} {response.text}")
-    return None  # return None if no readme is found in the repo
-
-def get_full_name(url):
-
-    if not url.startswith("https://github.com/"):
+    except Exception as e:
+        logging.exception("An error occurred while fetching the GitLab README.md content.")
         return None
 
-    parts = url.split("https://github.com/")[1].split("/")
+def get_github_readme_content(repo_full_name, headers):
+    """Fetch the README.md content from a GitHub repository."""
+    try:
+        contents_url = f"https://api.github.com/repos/{repo_full_name}/contents"
+        response = requests.get(contents_url, headers=headers)
+        logging.info(f"Fetching repository contents: {contents_url}")
 
+        if response.status_code != 200:
+            logging.error(f"Failed to fetch contents: {response.status_code} {response.text}")
+            return None
+
+        for file in response.json():
+            if file['name'].lower() in VALID_README_NAMES:
+                logging.info(f"Found README.md. Fetching content from: {file['download_url']}")
+                return fetch_file_content(file['download_url'], headers)
+
+        logging.warning("README.md not found in the repository.")
+        return None
+
+    except Exception as e:
+        logging.exception("An error occurred while fetching the GitHub README.md content.")
+        return None
+
+def get_full_name(repo_url):
+    """Extract the full repository name from a GitHub URL."""
+    if not repo_url.startswith("https://github.com/"):
+        logging.error("Invalid GitHub URL")
+        return None
+
+    parts = repo_url.split("https://github.com/")[1].split("/")
     if len(parts) < 2:
+        logging.error("GitHub URL is malformed: {repo_url}")
         return None
     
-    parts = [part for part in parts if part]
-    return "/".join(parts[:])
+    parts = [part for part in parts]
 
+    return f"{parts[0]}/{parts[1]}".strip()
 
-with open("./files/software_pages.json", "r", encoding="utf-8") as rf:
-    objs = json.load(rf)["final_links"]
+def update_readme_in_json(input_file, output_file, github_headers, gitlab_headers):
+    """Update the JSON file with README content from GitHub and GitLab repositories."""
+    try:
+        with open(input_file, "r", encoding="utf-8") as rf:
+            data = json.load(rf)
 
-    for count, obj in enumerate(objs):
-        repo_link = obj["repo_link"]
-
-        if not repo_link:
-            continue
-
-        domain = repo_link.split("/")[2]
-
-        if domain == "github.com":
-            repo_full_name = get_full_name(repo_link)
-            
-            if not repo_full_name:
+        for obj in data.get("final_links", []):
+            repo_link = obj.get("repo_link")
+            if not repo_link:
+                logging.warning("No repository link found.")
                 obj["readme"] = ""
                 continue
-            else:
-                readme = get_github_readme_content(repo_full_name)
-                if not readme:
+
+            domain = repo_link.split("/")[2]
+
+            if domain == "github.com":
+                repo_full_name = get_full_name(repo_link)
+                if not repo_full_name:
                     obj["readme"] = ""
                 else:
-                    obj["readme"] = readme
-            
-        else:
-            project_id = get_gitlab_project_id(repo_link)
+                    obj["readme"] = get_github_readme_content(repo_full_name, github_headers) or ""
 
-            if not project_id:
-                obj["project_id"] = ""
-                obj["readme"] = ""
             else:
-                gitlab_instance_url = repo_link.split("/")[2]
-                readme = get_gitlab_readme_content(gitlab_instance_url, project_id)
-
-                if not readme:
+                project_id = get_gitlab_project_id(repo_link)
+                if not project_id:
+                    obj["readme"] = ""
                     obj["project_id"] = ""
-                    obj["readme"] = ""
                 else:
+                    gitlab_instance_url = repo_link.split("/")[2]
+                    obj["readme"] = get_gitlab_readme_content(gitlab_instance_url, project_id, gitlab_headers) or ""
                     obj["project_id"] = project_id
-                    obj["readme"] = readme
-    
-    with open("./files/software_pages.json", "w", encoding="utf-8") as wf:
-        json.dump(objs, wf, ensure_ascii=False, indent=4)
 
+        with open(output_file, "w", encoding="utf-8") as wf:
+            json.dump(data, wf, ensure_ascii=False, indent=4)
+
+        logging.info(f"Updated JSON file written to {output_file}")
+
+    except Exception as e:
+        logging.exception("An error occurred while updating the JSON file.")
+
+
+update_readme_in_json("./files/software_pages.json", "./files/updated_software_pages.json", GITHUB_HEADERS, GITLAB_HEADERS)
