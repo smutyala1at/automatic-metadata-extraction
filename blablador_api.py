@@ -83,7 +83,7 @@ def get_installation_guide_keywords(input_file, output_file):
 
                 try:
                     readme_content = obj["cleaned_readme_content"]["content"]
-                except (TypeError): # few objs doesn't content!
+                except (TypeError): # few objs doesn't contain content!
                     continue
 
                 user_input = {
