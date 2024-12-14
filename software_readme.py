@@ -13,6 +13,27 @@ VALID_README_NAMES = [
     'readme.adoc', 'readme.asciidoc'
 ]
 
+VALID_AUTHORS = [
+    'authors', 'authors.txt', 'authors.md', 'authors.rst',
+]
+
+VALID_CONTRIBUTORS = [
+    'contributors', 'contributors.txt', 'contributors.md', 'contributors.rst'
+]
+
+VALID_LICENSES = [
+    'LICENSE', 'LICENSE.txt', 'LICENSE.md', 'LICENSE.rst',
+]
+
+# List of dependency-related files and lock files
+VALID_DEPENDENCIES = [
+    "requirements.txt", "Pipfile", "pyproject.toml", "setup.py", "Gemfile", "package.json",
+    "pom.xml", "build.gradle", "go.mod", "composer.json", "Cargo.toml", "vcpkg.json", "conanfile.txt",
+    "CMakeLists.txt", "Spack.yaml", ".csproj", "packages.config", "Package.swift", "Podfile", "pubspec.yaml",
+    "DESCRIPTION", "mix.exs", "install.sh", "bootstrap.sh", "cpanfile", "Makefile.PL", "Build.PL", "stack.yaml",
+    "cabal.project", "rebar.config", "Project.toml", "Manifest.toml", "build.sbt"
+]
+
 def fetch_file_content(url, headers):
     """Fetch the content of a file given its URL."""
     response = requests.get(url, headers=headers)
@@ -24,6 +45,14 @@ def fetch_file_content(url, headers):
 
 def get_gitlab_readme_content(gitlab_instance_url, project_id, headers):
     """Fetch the README.md content from a GitLab repository."""
+
+    codemeta = {"content": ""}
+    readme = {"content": ""}
+    dependencies = {"content": ""}
+    authors = {"content": ""}
+    contributors = {"content": ""}
+    licenses = {"content": ""}
+
     try:
         repo_tree_url = f"https://{gitlab_instance_url}/api/v4/projects/{project_id}/repository/tree"
         response = requests.get(repo_tree_url, headers=headers)
@@ -34,12 +63,34 @@ def get_gitlab_readme_content(gitlab_instance_url, project_id, headers):
             return None
 
         for file in response.json():
-            if file['name'].lower() in VALID_README_NAMES:
-                file_url = f"https://{gitlab_instance_url}/api/v4/projects/{project_id}/repository/files/{file['path']}/raw"
-                logging.info(f"Found README.md. Fetching content from: {file_url}")
-                return fetch_file_content(file_url, headers)
+            file_url = f"https://{gitlab_instance_url}/api/v4/projects/{project_id}/repository/files/{file['path']}/raw"
 
-        logging.warning("README.md not found in the repository.")
+            if file['name'].lower() == "codemeta.json":
+                """ can get most of the important content here - Authors, Contributors, Description, id """
+                codemeta["content"] += f"{file['name']}: {fetch_file_content(file_url, headers)}\n"
+
+            if file['name'].lower() in VALID_README_NAMES:
+                """ get readmes for installation and keywords """
+                readme["content"] += f"{file['name']}: {fetch_file_content(file_url, headers)}\n"
+
+            if file['name'].lower() in VALID_DEPENDENCIES:
+                """ get dependencies from whatever files are available """
+                dependencies["content"] += f"{file['name']}: {fetch_file_content(file_url, headers)}\n"
+
+            if file['name'].lower() == VALID_AUTHORS:
+                """ authors files are rare to find, try for luck, if not we try to get author from the first contributor from the repo"""
+                authors["content"] += f"{file['name']}: {fetch_file_content(file_url, headers)}\n"
+
+            if file['name'].lower() == VALID_CONTRIBUTORS:
+                """ get contributors from a file or get it from commit history """
+                contributors["content"] += f"{file['name']}: {fetch_file_content(file_url, headers)}\n"
+            
+            if file['name'].lower() in VALID_LICENSES:
+                licenses["content"] += f"{file['name']}: {fetch_file_content(file_url, headers)}\n"
+
+
+            
+
         return None
 
     except Exception as e:

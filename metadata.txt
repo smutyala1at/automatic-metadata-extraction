@@ -1,0 +1,6 @@
+1. check if repo has codemeta.json
+2. check if the readme has all the metdata fields? if not try to get installation related info and keywords from it
+3. check for dependency files for all programming language varied repos
+4. for contributors we could get it from commit history
+5. for uuid or identifier we an get it from repo id
+6 for description we can get it from repo description
