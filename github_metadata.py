@@ -1,14 +1,15 @@
 import requests
 import re
+import os
+import base64
+from dotenv import load_dotenv
+
+# load env variables
+load_dotenv()
 
 # url = input('Enter the URL: ')
 # GITHUB_TOKEN = input('Enter the personal token: ')
 url = 'https://github.com/OpenEnergyPlatform/oeplatform'
-GITHUB_TOKEN = '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'
-url_parts = url.split("/")
-
-get_owner_or_organization = url_parts[3]
-get_repo = url_parts[4]
 
 BASE_URL = "https://api.github.com/repos"
 
@@ -17,7 +18,7 @@ def get_repo_info(url):
 
     full_name = get_full_name(url)
     headers = {
-        "Authorization": f"token {GITHUB_TOKEN}",
+        "Authorization": f"token {os.getenv("GITHUB_TOKEN")}",
         "Accept": "application/vnd.github.v3+json"
         }
     
@@ -181,11 +182,6 @@ def get_method(url):
 
     if res.status_code == 200:
         return res.json()
-
-# Initialization and calling the function
-codemeta = {"files": []}
-readme = {"files": []}
-dependencies = {"files": []}
     
 def fetch_file_tree(base_url, repo_full_name, headers):
     """
@@ -239,8 +235,9 @@ def fetch_file_content(base_url, repo_full_name, file_path, headers):
         response = requests.get(file_url, headers=headers)
 
         if response.status_code == 200:
-            content = response.json().get("content")
-            return content 
+            content_base64 = response.json().get("content")
+            content = base64.b64decode(content_base64).decode("utf-8")
+            return content
         else:
             print(f"Failed to fetch content for {file_path}: {response.status_code}")
             return None
@@ -259,19 +256,30 @@ def get_repo_files(base_url, repo_full_name, headers):
         return None
 
     file_paths = process_tree(file_tree)
+    files_with_content = []
 
     if file_paths:
-        for category in file_paths:
-            for file_path in file_paths[category]:
+        print(file_paths)
+        for category, paths in file_paths.items():
+            if not paths:
+                    files_with_content.append({"category": category, "path": file_path, "content": ""})
+                    continue
+            
+            for file_path in paths:
                 content = fetch_file_content(base_url, repo_full_name, file_path, headers)
                 if content:
-                    print(f"Content of {file_path}:")
-                    print(content)
+                    files_with_content.append({"category": category, "path": file_path, "content": content})
                 else:
                     print(f"Failed to fetch content for {file_path}")
     else:
-        print("No relevant files found")
-
+        print("No relevant files found")                               
+        return [
+            {"category": "codemeta", "path": "", "content": ""},
+            {"category": "dependencies", "path": "", "content": ""},
+            {"category": "readme", "path": "", "content": ""}
+        ]
+    
+    return files_with_content
 
 
 data = get_repo_info(url)

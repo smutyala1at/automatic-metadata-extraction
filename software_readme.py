@@ -43,7 +43,7 @@ def fetch_file_content(url, headers):
         logging.error(f"Failed to fetch file from {url} with status code {response.status_code}")
         return None
 
-def get_gitlab_readme_content(gitlab_instance_url, project_id, headers):
+def get_gitlab_content(gitlab_instance_url, project_id, headers):
     """Fetch the README.md content from a GitLab repository."""
 
     codemeta = {"content": ""}
@@ -88,37 +88,78 @@ def get_gitlab_readme_content(gitlab_instance_url, project_id, headers):
             if file['name'].lower() in VALID_LICENSES:
                 licenses["content"] += f"{file['name']}: {fetch_file_content(file_url, headers)}\n"
 
-
-            
-
-        return None
-
     except Exception as e:
-        logging.exception("An error occurred while fetching the GitLab README.md content.")
+        logging.exception("An error occurred while fetching the content.")
         return None
 
-def get_github_readme_content(repo_full_name, headers):
+def get_github_content(repo_full_name, headers):
     """Fetch the README.md content from a GitHub repository."""
+
+    codemeta = {"content": ""}
+    readme = {"content": ""}
+    dependencies = {"content": ""}
+    authors = {"content": ""}
+    contributors = {"content": ""}
+    licenses = {"content": ""}
+
     try:
         contents_url = f"https://api.github.com/repos/{repo_full_name}/contents"
         response = requests.get(contents_url, headers=headers)
         logging.info(f"Fetching repository contents: {contents_url}")
 
         if response.status_code != 200:
-            logging.error(f"Failed to fetch contents: {response.status_code} {response.text}")
             return None
 
         for file in response.json():
-            if file['name'].lower() in VALID_README_NAMES:
-                logging.info(f"Found README.md. Fetching content from: {file['download_url']}")
-                return fetch_file_content(file['download_url'], headers)
+            if file["name"].lower() == "codemeta.json":
+                codemeta["content"] += f"{file['name']}: {fetch_file_content(file['download_url'], headers)}\n"
 
-        logging.warning("README.md not found in the repository.")
-        return None
+            if file['name'].lower() in VALID_README_NAMES:
+                readme["content"] += f"{file['name']}: {fetch_file_content(file['download_url'], headers)}\n"
+            
+            if file['name'].lower() in VALID_DEPENDENCIES:
+                """ get dependencies from whatever files are available """
+                dependencies["content"] += f"{file['name']}: {fetch_file_content(file['download_url'], headers)}\n"
+
+            if file['name'].lower() == VALID_AUTHORS:
+                """ authors files are rare to find, try for luck, if not we try to get author from the first contributor from the repo"""
+                authors["content"] += f"{file['name']}: {fetch_file_content(file['download_url'], headers)}\n"
+        
+        contributors["contributors_lst"] = get_contributors(f"https://api.github.com/repos/{repo_full_name}/commits", headers)
+
+
 
     except Exception as e:
-        logging.exception("An error occurred while fetching the GitHub README.md content.")
+        logging.exception("An error occurred while fetching the content.")
         return None
+
+def get_contributors(url, headers):
+
+    page = 1
+    per_page = 100
+    res = []
+
+    while True:
+        params = {"per_page": per_page, "page": page}
+        commits = requests.get(url, headers, params=params)
+
+        if commits.status_code != 200:
+            return None
+        
+        commit_data = commits.json()
+        for commit in commit_data:
+            name = commit["commit"]["author"]["name"]
+            email = commit["commit"]["author"]["email"]
+
+            res.append({"name": name, "email": email})
+        
+        if len(commit_data) < per_page:
+            break
+        
+        page += 1
+
+    return res
+
 
 def get_full_name(repo_url):
     """Extract the full repository name from a GitHub URL."""
@@ -134,6 +175,7 @@ def get_full_name(repo_url):
     parts = [part for part in parts]
 
     return f"{parts[0]}/{parts[1]}".strip()
+
 
 def update_readme_in_json(input_file, output_file, github_headers, gitlab_headers):
     """Update the JSON file with README content from GitHub and GitLab repositories."""
@@ -155,7 +197,7 @@ def update_readme_in_json(input_file, output_file, github_headers, gitlab_header
                 if not repo_full_name:
                     obj["readme"] = ""
                 else:
-                    obj["readme"] = get_github_readme_content(repo_full_name, github_headers) or ""
+                    obj["readme"] = get_github_content(repo_full_name, github_headers) or ""
 
             else:
                 project_id = get_gitlab_project_id(repo_link)
@@ -164,7 +206,7 @@ def update_readme_in_json(input_file, output_file, github_headers, gitlab_header
                     obj["project_id"] = ""
                 else:
                     gitlab_instance_url = repo_link.split("/")[2]
-                    obj["readme"] = get_gitlab_readme_content(gitlab_instance_url, project_id, gitlab_headers) or ""
+                    obj["readme"] = get_gitlab_content(gitlab_instance_url, project_id, gitlab_headers) or ""
                     obj["project_id"] = project_id
 
         with open(output_file, "w", encoding="utf-8") as wf:
