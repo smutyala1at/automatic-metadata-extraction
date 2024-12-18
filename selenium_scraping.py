@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import json
+import asyncio
 
 driver = webdriver.Chrome()
 
@@ -60,7 +61,7 @@ def get_repo_links(file_name_or_path):
         json.dump(file_content, wf, ensure_ascii=False, indent=4)
 
 
-def get_gitlab_project_id(repo_link):
+async def get_gitlab_project_id(repo_link):
 
     try:
         driver.get(repo_link)

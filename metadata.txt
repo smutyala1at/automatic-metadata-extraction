@@ -4,3 +4,22 @@
 4. for contributors we could get it from commit history
 5. for uuid or identifier we an get it from repo id
 6 for description we can get it from repo description
+
+
+
+# some readmes might contain authors in readmes, also in dependencies for weird reasons!
+# use llm to first summarize readme for installation process or link(any of it), keywords, authors, maintainers(if mentioned)
+# use llm to get authors, maintainers from dependencies, sometimes it is case, toml files can have authors, maintainers
+# try to move to go because of goroutines, then api calling is async, maybe python as it as well
+
+# toml, xml, 
+
+# what is most important at first?
+# ["name", "description", "url", "license", "latest_version", "topics", "languages", "readme", "codemeta", "dependencies"]
+# from readme get installation process or link if found, and keywords
+# dependencies
+# if codemeta found, get authors, contributors, id, or represent each attribute of it on frontend
+
+
+# from readme, dependencies, codemeta ask llm to get installation, keywords, dependencies, authors, contributors, developers, maintainer, funder, doi
+# datecreated, published from rest api

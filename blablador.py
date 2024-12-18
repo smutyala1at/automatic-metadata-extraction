@@ -1,53 +1,46 @@
-import requests
 import json
+import aiohttp
+import asyncio
+from typing import List, Union
 
-class Models():
-   
-    def __init__(self, api_key):
+class Models:
+    def __init__(self, api_key: str):
         self.api_key = api_key
         self.headers = {'accept': 'application/json', 'Authorization': f'Bearer {api_key}'}
-   
-    url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/models"
-     
-    def get_model_data(self):
-        response = requests.get(url = self.url, headers = self.headers)
-        response = json.loads(response.text)
-        return(response["data"])
+        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/models"
 
-    def get_model_ids(self):
-        response = requests.get(url = self.url, headers = self.headers)
-        response = json.loads(response.text)
+    async def get_model_data(self):
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url=self.url, headers=self.headers) as response:
+                data = await response.json()
+                return data["data"]
 
-        # TODO write error messages for 400, 401, etc respones
-        # like with response.ok , response.status, etc... 
+    async def get_model_ids(self):
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url=self.url, headers=self.headers) as response:
+                data = await response.json()
+                return [model["id"] for model in data["data"]]
 
-        ids = []
-        for model in response["data"]:
-            ids.append(model["id"])
-
-        return(ids)
-
-class ChatCompletions():
-
-    # changed max tokens as per mistral - experimented a bit, found from a response, but not sure if it is true!
-    def __init__(self, api_key, model,temperature = 0.7, choices =  1, max_tokens =  32768, user = 'default'): 
+class ChatCompletions:
+    def __init__(self, api_key: str, model: str, temperature: float = 0.7, 
+                 choices: int = 1, max_tokens: int = 32768, user: str = 'default'):
         self.api_key = api_key
         self.model = model
         self.temperature = temperature
         self.choices = choices
         self.max_tokens = max_tokens
         self.user = user
-        self.headers = {'accept': 'application/json', 'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'}
+        self.headers = {
+            'accept': 'application/json',
+            'Authorization': f'Bearer {api_key}',
+            'Content-Type': 'application/json'
+        }
+        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/chat/completions"
+        self.top_p = 1
+        self.presence_penalty = 0
+        self.frequency_penalty = 0
 
-   
-    url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/chat/completions"
-    
-    # don't know what these are, using default values from https://helmholtz-blablador.fz-juelich.de:8000/docs#/
-    top_p =  1 # has something to do with temperature...
-    presence_penalty = 0
-    frequency_penalty = 0
-
-    def get_completion(self, messages):
+    async def get_completion(self, messages: List[dict]):
         payload = {
             "model": self.model,
             "messages": messages,
@@ -55,46 +48,41 @@ class ChatCompletions():
             "top_p": self.top_p,
             "n": self.choices,
             "max_tokens": self.max_tokens,
-            "stop": [
-                "string"
-            ],
+            "stop": ["string"],
             "stream": "false",
             "presence_penalty": self.presence_penalty,
             "frequency_penalty": self.frequency_penalty,
             "user": self.user
         }
-        payload = json.dumps(payload)
         
-        response = requests.post(url = self.url, headers = self.headers, data=payload)
-        # TODO write error messages for 400, 401, etc respones
-        # like with response.ok , response.status, etc... 
-        return(response.text)
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url=self.url, headers=self.headers, 
+                                  json=payload) as response:
+                return await response.text()
 
-class Completions():
-
-    def __init__(self, api_key, model,temperature = 0.7, choices = 1, max_tokens =  32768, user = "default"):
+class Completions:
+    def __init__(self, api_key: str, model: str, temperature: float = 0.7,
+                 choices: int = 1, max_tokens: int = 32768, user: str = "default"):
         self.api_key = api_key
         self.model = model
         self.temperature = temperature
         self.choices = choices
         self.max_tokens = max_tokens
         self.user = user
+        self.headers = {
+            'accept': 'application/json',
+            'Authorization': f'Bearer {api_key}',
+            'Content-Type': 'application/json'
+        }
+        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/completions"
+        self.suffix = "string"
+        self.logprobs = 0
+        self.echo = "false"
+        self.top_p = 1
+        self.presence_penalty = 0
+        self.frequency_penalty = 0
 
-        self.headers = {'accept': 'application/json', 'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'}
-
-   
-    url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/completions"
-    
-    # don't know what these are, using default values from https://helmholtz-blablador.fz-juelich.de:8000/docs#/
-
-    suffix = "string"
-    logprobs = 0
-    echo = "false"
-    top_p =  1 # has something to do with temperature...
-    presence_penalty = 0
-    frequency_penalty = 0
-
-    def get_completion(self, prompt):
+    async def get_completion(self, prompt: str):
         payload = {
             "model": self.model,
             "prompt": prompt,
@@ -102,68 +90,48 @@ class Completions():
             "temperature": self.temperature,
             "n": self.choices,
             "max_tokens": self.max_tokens,
-            "stop": [
-                "string"
-            ],
+            "stop": ["string"],
             "stream": "false",
             "top_p": self.top_p,
-            "logprobs":self.logprobs,
-            "echo":self.echo,
+            "logprobs": self.logprobs,
+            "echo": self.echo,
             "presence_penalty": self.presence_penalty,
             "frequency_penalty": self.frequency_penalty,
             "user": self.user
         }
 
-        payload = json.dumps(payload)
-        
-        response = requests.post(url = self.url, headers = self.headers, data=payload)
-        # TODO write error messages for 400, 401, etc respones
-        # like with response.ok , response.status, etc... 
-        return(response.text)
-    
-class TokenCount():
-     
-    def __init__(self, model, max_tokens = 0):
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url=self.url, headers=self.headers, 
+                                  json=payload) as response:
+                return await response.text()
+
+class TokenCount:
+    def __init__(self, model: str, max_tokens: int = 0):
         self.model = model
-        self.max_tokens = max_tokens #this does nothing
-        self.headers = {'accept': 'application/json', 'Content-Type': 'application/json'}
+        self.max_tokens = max_tokens
+        self.headers = {
+            'accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/api/v1/token_check"
 
-    
-    url = "https://helmholtz-blablador.fz-juelich.de:8000/api/v1/token_check"
-
-
-    def count(self, prompts):
-        try:
-            iterator = iter(prompts)
-        except TypeError:
-            prompt_list = [ 
-                    {
-                        "model": "zephyr-7b-beta",
-                        "prompt": prompts,
-                        "max_tokens":self.max_tokens
-                    } 
-                ]
+    async def count(self, prompts: Union[str, List[str]]):
+        if isinstance(prompts, str):
+            prompt_list = [{
+                "model": "zephyr-7b-beta",
+                "prompt": prompts,
+                "max_tokens": self.max_tokens
+            }]
         else:
-            prompt_list = []
-            for prompt in prompts:
-                prompt_list.append(
-                    {
-                    "model": "zephyr-7b-beta",
-                    "prompt": prompt,
-                    "max_tokens": self.max_tokens
-                    }   
-                )
+            prompt_list = [{
+                "model": "zephyr-7b-beta",
+                "prompt": prompt,
+                "max_tokens": self.max_tokens
+            } for prompt in prompts]
 
-        payload = {
-                "prompts": prompt_list
-            }
-        
-        payload = json.dumps(payload)
-        
-        response = requests.post(url = self.url, headers = self.headers, data=payload)
-        # TODO write error messages for 400, 401, etc respones
-        # like with response.ok , response.status, etc... 
-        return(response.text)
+        payload = {"prompts": prompt_list}
 
-#embeddings_url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/embeddings"
-# model_embeddings_url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/engines/{model_name}/embeddings"
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url=self.url, headers=self.headers, 
+                                  json=payload) as response:
+                return await response.text()

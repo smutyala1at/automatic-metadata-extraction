@@ -129,7 +129,63 @@ def get_installation_guide_keywords(input_file, output_file):
         else:
             raise ValueError("The input file should have list of objects!")
         
-get_installation_guide_keywords("./files/final_cleaned_dataset.json", "./files/dataset.json")
+
+def clean_software_readmes(input_file, output_file):
+    with open(input_file, "r", encoding="utf-8") as rf:
+        link_objs = json.load(rf)["final_links"]  # Parses json content in the file
+
+        # Check if the input file contains a list of objects
+        if isinstance(link_objs, list):
+            try:
+                with open(output_file, "r", encoding="utf-8") as wf:
+                    existing_data = json.load(wf)  # Read existing data from the output file
+            except (FileNotFoundError, json.JSONDecodeError):
+                existing_data = [] 
+
+            for obj in link_objs:
+                if obj["readme"]:
+                    response = completion.get_completion([
+                        {
+                            "role": "user", 
+                            "content": "Extract the content from the following Markdown README and remove only Markdown syntax characters (e.g., **, *, #, -, \n, _, etc.). Keep the actual text and all content intact, including paragraphs, sentences, and formatting such as line breaks, bullet points, and code blocks. Do not alter the content of the README in any way other than removing Markdown-specific characters: " + obj["readme"]
+                        }
+                    ])
+
+                    # skip the empty responses
+                    if not response:
+                        print("Empty response received.")
+                        obj["cleaned_readme_content"] = ""
+                        continue
+
+                    print("Response:", response)
+
+                    try:
+                        response_data = json.loads(response)  # Parse the JSON content from the string (load vs loads) threw an error, use it correctly!!!
+
+                        if response_data["object"] == "error":
+                            obj["cleaned_readme_content"] = ""
+                        else:
+                            obj["cleaned_readme_content"] = response_data["choices"][0]["message"]
+                    except json.JSONDecodeError:
+                        print(f"Failed to decode response: {response}")
+                        obj["cleaned_readme_content"] = ""
+
+                    existing_data.append(obj)
+
+                    time.sleep(1)  
+                else:
+                    obj["cleaned_readme_content"] = ""
+
+        else:
+            raise ValueError("The input file must contain a list of objects")
+        
+        # write cleaned readmes to output file
+        with open(output_file, "w", encoding="utf-8") as wf:
+            json.dump(existing_data, wf, indent=4)
+
+clean_software_readmes("./files/updated_software_pages.json", "./files/updated_software_readmes.json")
+
+#get_installation_guide_keywords("./files/final_cleaned_dataset.json", "./files/dataset.json")
 
 #input_file = "./files/filtered_readmes.json"
 #output_file = "final_cleaned_dataset.json"
