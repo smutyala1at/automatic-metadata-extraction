@@ -46,9 +46,10 @@ class ChatCompletions:
             "messages": messages,
             "temperature": self.temperature,
             "top_p": self.top_p,
+            "top_k": -1,
             "n": self.choices,
             "max_tokens": self.max_tokens,
-            "stop": ["string"],
+            "stop": "string",
             "stream": "false",
             "presence_penalty": self.presence_penalty,
             "frequency_penalty": self.frequency_penalty,
@@ -57,7 +58,7 @@ class ChatCompletions:
         
         async with aiohttp.ClientSession() as session:
             async with session.post(url=self.url, headers=self.headers, 
-                                  json=payload) as response:
+                                  json=payload, timeout=30) as response:
                 return await response.text()
 
 class Completions:
@@ -100,10 +101,19 @@ class Completions:
             "user": self.user
         }
 
-        async with aiohttp.ClientSession() as session:
-            async with session.post(url=self.url, headers=self.headers, 
-                                  json=payload) as response:
-                return await response.text()
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.post(url=self.url, headers=self.headers, 
+                                      json=payload, timeout=30) as response:
+                    print(f"Response status: {response.status}")
+                    if response.status != 200:
+                        error_text = await response.text()
+                        print(f"Error: {error_text}")
+                        return None
+                    return await response.text()
+        except Exception as e:
+            print(f"Request failed: {str(e)}")
+            return None
 
 class TokenCount:
     def __init__(self, model: str, max_tokens: int = 0):
