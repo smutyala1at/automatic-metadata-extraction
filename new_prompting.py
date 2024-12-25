@@ -20,10 +20,10 @@ async def update_csv_with_api_responses(input_csv_path, output_csv_path):
         REQUIRED FIELDS (ONLY IF EXPLICITLY STATED):
         1. Dependencies: Exact package names + versions
         2. Installation: Complete procedure OR referenced files (install.md, setup.py)
-        3. Authors: Full details (name, affiliation, role, contact)
+        3. Authors: Full details (name, affiliation, role, contact, orcid, etc)
         4. Contributors: Names + specific contributions
         5. Funding: Grant numbers + organizations
-        6. DOI: All identifiers (publications, datasets)
+        6. DOI: All identifiers (publications, datasets etc)
         7. License: Name, version, terms, conditions
         8. Keywords: Software-specific terms (no generic/dependency terms)
 
@@ -43,23 +43,21 @@ async def update_csv_with_api_responses(input_csv_path, output_csv_path):
         JSON STRUCTURE:
         {{
             "Dependencies": [
-                # Require exact package names and versions
-                # Format: ["package-name"] or ["package-name: version"]
-                # Empty if incomplete specifications
+                # Format examples:
+                # Name only: ["package-name"]
+                # With version: ["package-name: >=version"]
+                # Multiple packages: ["pkg1: >=1.0", "pkg2", "pkg3: ^2.0"]
             ],
-            "Installation_Instructions": [
-                # Complete instructions or filename if mentioned
-                # Empty if incomplete steps
-            ],
+            "Installation_Instructions": "",  # Steps or referenced files
             "Authors": [
-                # Complete author details only
-                # Format: {{"name": "", "affiliation": "", "email": ""}}
-                # Empty if missing any required details
+                # Format examples:
+                # Basic: {{"name": "Author Name"}}
+                # Full: {{"name": "Author Name", "email": "email@org.com", "role": "role-type", "ORCID": "0000-0000-0000-0000"}}
             ],
             "Contributors": [
                 # Complete contribution information
                 # Format: {{"name": "", "contribution": ""}}
-                # Empty if roles unclear
+                # can be "maintainer/contributor/developer"
             ],
             "Funding": "",    # Complete grant/funding details
             "DOI": "",       # Complete DOI string

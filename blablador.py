@@ -1,25 +1,35 @@
 import json
+import requests
 import aiohttp
 import asyncio
 from typing import List, Union
+import pandas as pd
 
-class Models:
-    def __init__(self, api_key: str):
+class Models():
+   
+    def __init__(self, api_key):
         self.api_key = api_key
         self.headers = {'accept': 'application/json', 'Authorization': f'Bearer {api_key}'}
-        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/models"
+   
+    url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/models"
+     
+    def get_model_data(self):
+        response = requests.get(url = self.url, headers = self.headers)
+        response = json.loads(response.text)
+        return(response["data"])
 
-    async def get_model_data(self):
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url=self.url, headers=self.headers) as response:
-                data = await response.json()
-                return data["data"]
+    def get_model_ids(self):
+        response = requests.get(url = self.url, headers = self.headers)
+        response = json.loads(response.text)
 
-    async def get_model_ids(self):
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url=self.url, headers=self.headers) as response:
-                data = await response.json()
-                return [model["id"] for model in data["data"]]
+        # TODO write error messages for 400, 401, etc respones
+        # like with response.ok , response.status, etc... 
+
+        ids = []
+        for model in response["data"]:
+            ids.append(model["id"])
+
+        return(ids)
 
 class ChatCompletions:
     def __init__(self, api_key: str, model: str, temperature: float = 0.7, 
@@ -35,7 +45,7 @@ class ChatCompletions:
             'Authorization': f'Bearer {api_key}',
             'Content-Type': 'application/json'
         }
-        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/api/chat/completions"
+        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/chat/completions"
         self.top_p = 1
         self.presence_penalty = 0
         self.frequency_penalty = 0
@@ -48,17 +58,34 @@ class ChatCompletions:
             "top_p": self.top_p,
             "n": self.choices,
             "max_tokens": self.max_tokens,
-            "stop": "string",
-            "stream": "false",
+            "stream": False,  # Changed from "false" string to boolean
             "presence_penalty": self.presence_penalty,
             "frequency_penalty": self.frequency_penalty,
             "user": self.user
         }
         
-        async with aiohttp.ClientSession() as session:
-            async with session.post(url=self.url, headers=self.headers, 
-                                  json=payload, timeout=30) as response:
-                return await response.text()
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.post(
+                    url=self.url, 
+                    headers=self.headers, 
+                    json=payload,
+                    timeout=aiohttp.ClientTimeout(total=120)  # Increased timeout
+                ) as response:
+                    if response.status != 200:
+                        error_text = await response.text()
+                        print(f"Error response: {error_text}")
+                        return error_text
+                        
+                    response_text = await response.text()
+                    return response_text
+                    
+        except asyncio.TimeoutError:
+            print("Request timed out")
+            return json.dumps({"error": "timeout"})
+        except Exception as e:
+            print(f"Request failed: {str(e)}")
+            return json.dumps({"error": str(e)})
 
 class Completions:
     def __init__(self, api_key: str, model: str, temperature: float = 0.7,
@@ -144,3 +171,22 @@ class TokenCount:
             async with session.post(url=self.url, headers=self.headers, 
                                   json=payload) as response:
                 return await response.text()
+
+async def update_csv_with_api_responses(csv_file_path, output_csv_path):
+    # Read the CSV file
+    df = pd.read_csv(csv_file_path)
+    
+    # Add new columns if they don't exist
+    if 'final_res' not in df.columns:
+        df['final_res'] = None
+    if 'error' not in df.columns:
+        df['error'] = None
+
+    # Get available models and select appropriate model
+    models_client = Models(api_key=API_KEY)
+    models = await models_client.get_model_ids()  # Add await here
+    print("Available models:", models)
+    
+    # Use alias-fast instead of full model name
+    model_alias = "alias-fast"
+    completion = ChatCompletions(api_key=API_KEY, model=model_alias)
