@@ -23,7 +23,7 @@ class Models:
 
 class ChatCompletions:
     def __init__(self, api_key: str, model: str, temperature: float = 0.7, 
-                 choices: int = 1, max_tokens: int = 32768, user: str = 'default'):
+                 choices: int = 1, max_tokens: int = 32720, user: str = 'default'):
         self.api_key = api_key
         self.model = model
         self.temperature = temperature
@@ -35,7 +35,7 @@ class ChatCompletions:
             'Authorization': f'Bearer {api_key}',
             'Content-Type': 'application/json'
         }
-        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/chat/completions"
+        self.url = "https://helmholtz-blablador.fz-juelich.de:8000/v1/api/chat/completions"
         self.top_p = 1
         self.presence_penalty = 0
         self.frequency_penalty = 0
@@ -46,7 +46,6 @@ class ChatCompletions:
             "messages": messages,
             "temperature": self.temperature,
             "top_p": self.top_p,
-            "top_k": -1,
             "n": self.choices,
             "max_tokens": self.max_tokens,
             "stop": "string",
@@ -63,7 +62,7 @@ class ChatCompletions:
 
 class Completions:
     def __init__(self, api_key: str, model: str, temperature: float = 0.7,
-                 choices: int = 1, max_tokens: int = 32768, user: str = "default"):
+                 choices: int = 1, max_tokens: int = 32720, user: str = "default"):
         self.api_key = api_key
         self.model = model
         self.temperature = temperature
