@@ -40,7 +40,7 @@ async def update_csv_with_api_responses(input_csv_path, output_csv_path):
         - Provide output only in the specified JSON structure, with no added sentences before or after JSON, no explanations, or deviations.  
         - Follow these rules exactly for every entry.  
 
-        JSON STRUCTURE:
+        OUTPUT STRUCTURE:
         {{
             "Dependencies": [
                 # Format examples:
@@ -50,14 +50,14 @@ async def update_csv_with_api_responses(input_csv_path, output_csv_path):
             ],
             "Installation_Instructions": "",  # Steps or referenced files
             "Authors": [
-                # Format examples:
-                # Basic: {{"name": "Author Name"}}
-                # Full: {{"name": "Author Name", "email": "email@org.com", "role": "role-type", "ORCID": "0000-0000-0000-0000"}}
+            # Include only available information:
+            # If just name: {{"name": "Author"}}
+            # Add other fields only if explicitly stated in the text
             ],
             "Contributors": [
-                # Complete contribution information
-                # Format: {{"name": "", "contribution": ""}}
-                # can be "maintainer/contributor/developer"
+                # Include only available information:
+                # If just name and role: {{"name": "Name", "type": "maintainer"}}
+                # Add other fields only if explicitly stated in the text
             ],
             "Funding": "",    # Complete grant/funding details
             "DOI": "",       # Complete DOI string
@@ -65,7 +65,7 @@ async def update_csv_with_api_responses(input_csv_path, output_csv_path):
             "Keywords": []   # Specific technical terms only
         }}
 
-        IMPORTANT: Never use example values as actual data. Leave fields empty if information is not present in the input text.
+        IMPORTANT: Never use example values as actual data.
         """
 
         lines = [line.strip() for line in prompt.splitlines() if line.strip()]

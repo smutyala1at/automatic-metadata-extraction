@@ -65,7 +65,8 @@ async def update_csv_with_api_responses(csv_file_path, output_csv_path):
     models = Models(api_key=API_KEY).get_model_ids()
     print("Available models:", models)
     
-    completion = ChatCompletions(api_key=API_KEY, model=models[3])
+    completion = ChatCompletions(api_key=API_KEY, model=models[4])
+    print("Using model:", models[4])
     
     # Process each row
     for index, row in df.iterrows():
