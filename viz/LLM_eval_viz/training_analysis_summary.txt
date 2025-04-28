@@ -1,0 +1,85 @@
+TRAINING LOSS ANALYSIS SUMMARY
+==========================
+
+OVERALL STATISTICS:
+Total Training Steps: 77
+Mean Loss: 1.2114
+Median Loss: 1.1809
+Minimum Loss: 0.8008 (at step 38)
+Maximum Loss: 1.9406 (at step 21)
+Standard Deviation: 0.2041
+Coefficient of Variation: 0.1685
+Linear Trend Slope: 0.004463
+
+KEY CONVERGENCE METRIC:
+Rolling Standard Deviation Improvement: 19.40%
+
+HALF ANALYSIS:
+First Half Mean: 1.2574
+Second Half Mean: 1.1666
+Improvement: 7.22%
+
+PHASE ANALYSIS:
+Early Phase
+(Steps 1-25):
+  Mean: 1.3166
+  Median: 1.2847
+  Std Dev: 0.2368
+  Min/Max: 0.8552/1.9406
+  Range: 1.0854
+  IQR: 0.3287
+
+Middle Phase
+(Steps 26-51):
+  Mean: 1.1647
+  Median: 1.1714
+  Std Dev: 0.1514
+  Min/Max: 0.8008/1.4653
+  Range: 0.6645
+  IQR: 0.2020
+
+Late Phase
+(Steps 52-77):
+  Mean: 1.1573
+  Median: 1.1295
+  Std Dev: 0.1744
+  Min/Max: 0.8607/1.5768
+  Range: 0.7161
+  IQR: 0.1977
+
+QUARTILE ANALYSIS:
+First Quartile
+(Steps 1-19):
+  Mean: 1.2756
+  Std Dev: 0.2179
+  Range: 0.7935
+  Coef of Variation: 0.1708
+
+Second Quartile
+(Steps 20-38):
+  Mean: 1.2391
+  Std Dev: 0.2438
+  Range: 1.1398
+  Coef of Variation: 0.1967
+
+Third Quartile
+(Steps 39-57):
+  Mean: 1.1818
+  Std Dev: 0.1604
+  Range: 0.6603
+  Coef of Variation: 0.1358
+
+Fourth Quartile
+(Steps 58-77):
+  Mean: 1.1522
+  Std Dev: 0.1592
+  Range: 0.6760
+  Coef of Variation: 0.1382
+
+CONVERGENCE METRICS:
+Variance Reduction (Early to Late): 26.37%
+Stability Improvement: 26.37%
+Mean Loss Improvement (Early to Late): 12.10%
+Q1 to Q4 Std Dev Change: 26.92%
+Q1 to Q4 Mean Change: 9.68%
+Step-by-Step Analysis: Start to End Std Dev Improvement: 19.40%

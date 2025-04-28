@@ -2,3 +2,8 @@ requests
 python-dotenv
 selenium
 aiohttp
+matplotlib
+pandas
+numpy
+scipy
+seaborn
