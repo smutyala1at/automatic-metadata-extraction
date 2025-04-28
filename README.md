@@ -4,7 +4,18 @@ This repository contains code and resources for automatic metadata extraction fr
 
 ## Project Overview
 
-This project aims to automate the extraction of metadata from software repositories by leveraging Large Language Models (LLMs). The system extracts important repository information, including READMEs, dependencies, and CodeMeta files, processes this data, and uses it to fine-tune the Llama 3.1 8b model for metadata extraction. The performance is then compared against existing methods like SOMEF (Software Metadata Extraction Framework).
+This project aims to automate the extraction of metadata from software repositories by leveraging Large Language Models (LLMs). The project extracts important repository information, including READMEs, dependencies, and CodeMeta files, processes this data to create a custom dataset. After extracting repository files, the dataset is annotated with these elements:
+
+- softwareRequirements
+- buildInstructions
+- author
+- contributor
+- funder
+- identifier
+- license
+- keywords
+
+This annotated dataset is then used to fine-tune the Llama 3.1 8b model for metadata extraction. The performance is then compared against existing tools like SOMEF (Software Metadata Extraction Framework).
 
 ## Repository Structure
 
